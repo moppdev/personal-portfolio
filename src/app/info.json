@@ -1,5 +1,6 @@
 {
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae sapien rhoncus, scelerisque erat dignissim, sodales purus. Donec lobortis dui ut velit malesuada, eu fermentum felis posuere. Donec sit amet lacus ultrices, tristique lorem sed, efficitur nunc. Cras auctor vulputate massa eget viverra. Nulla non mi sagittis, tempor nisi id, eleifend eros. Donec laoreet erat nibh, vel facilisis purus finibus sed. Duis non imperdiet nulla. Phasellus leo velit, scelerisque ut luctus eget, iaculis efficitur dolor. Duis a odio finibus, hendrerit odio eu, ornare felis. In fermentum urna sapien, non ultrices ligula consequat quis. Fusce rutrum sagittis purus, eu hendrerit mi placerat sed. Sed euismod, erat a varius tincidunt, tortor nisl sagittis sapien, ac pretium augue metus consequat neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed aliquet rutrum ligula. Phasellus eleifend ante a nisl vestibulum, nec ornare odio tincidunt. Suspendisse convallis eleifend nunc, ac facilisis est sagittis sit amet.",
+    "profile_pic": "marco.jpg",
     "education": [
         {
             "institution": "University of South Africa",
@@ -13,42 +14,42 @@
         {
             "institution": "Udemy",
             "title": "Figma UI UX Essentials",
-            "institution_img": "",
+            "institution_img": "udemy_logo.png",
             "link": "https://www.udemy.com/certificate/UC-e6001d5f-3a00-41c5-987a-b054f97961e2/",
             "skills_learned": ["Figma", "UX Design Principles"]
         },
         {
             "institution": "Udemy",
             "title": "Angular - The Complete Guide (2025 Edition)",
-            "institution_img": "",
+            "institution_img": "udemy_logo.png",
             "link": "https://www.udemy.com/certificate/UC-130d5c26-dad8-4939-9e46-f39a3be47df5/",
             "skills_learned": ["Angular", "RxJS", "TypeScript", "Angular CLI", "Front-End Development"]
         },
         {
             "institution": "Udemy",
             "title": "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
-            "institution_img": "",
+            "institution_img": "udemy_logo.png",
             "link": "https://www.udemy.com/certificate/UC-4f43768e-f232-4d72-93c3-054f18161cb1/",
             "skills_learned": ["MySQL", "Database Design", "Relational Databases", "SQL"]
         },
         {
             "institution": "freeCodeCamp",
             "title": "Foundational C# with Microsoft",
-            "institution_img": "",
+            "institution_img": "fcc_logo.png",
             "link": "https://freecodecamp.org/certification/moppel_02/foundational-c-sharp-with-microsoft",
             "skills_learned": ["C#", "Programming", "Computer Science"]
         },
         {
             "institution": "freeCodeCamp",
             "title": "JavaScript Algorithms and Data Structures",
-            "institution_img": "",
+            "institution_img": "fcc_logo.png",
             "link": "https://freecodecamp.org/certification/moppel_02/javascript-algorithms-and-data-structures",
             "skills_learned": ["JavaScript", "Algorithms", "JSON", "Programming"]
         },
         {
             "institution": "edX",
             "title": "Professional Certificate in Computer Science for Web Programming by HarvardX",
-            "institution_img": "",
+            "institution_img": "edx_logo.png",
             "link": "https://credentials.edx.org/credentials/30c3b3a1dfbc454a8448b6927affa925/",
             "skills_learned": [
                 "SQL",
@@ -68,6 +69,12 @@
         }
     ],
     "projects": [
+        {
+            "title": "",
+            "description": "",
+            "images": [],
+            "stack": []
+        },
         {
             "title": "",
             "description": "",
