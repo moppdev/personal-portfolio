@@ -1,0 +1,17 @@
+// common colours
+$base-text-color: #81a4cd;
+$base-back-color: #003554;
+$nav-foot-color: #051923;
+$button-border: #b5c1c9;
+
+// Used for the styling of buttons
+@mixin button-style {
+    background-color: $base-text-color;
+    color: $nav-foot-color;
+    font-family: "Hind", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.6em;
+    border-radius: 0.6em;
+    border: solid $button-border 0.2em;
+}

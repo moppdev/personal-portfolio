@@ -20,6 +20,24 @@ export class InfoService {
     return infoJson.education;
   }
 
+  // getter to get the certification array
+  get certifications()
+  {
+    return infoJson.certifications;
+  }  
+  
+  // getter to get the projects array
+  get projects()
+  {
+    return infoJson.projects;
+  }  
+  
+  // getter to get the projects array
+  get services()
+  {
+    return infoJson.services;
+  }
+
   // error message for if something goes wrong with the JSON
   get returnError()
   {

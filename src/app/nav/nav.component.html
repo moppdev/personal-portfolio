@@ -1,5 +1,26 @@
 <header>
-    <nav>
-        <p>JAYA HEEEEEE, JAYA HEEEE</p>
+    <!-- Desktop nav -->
+    <nav class="desktop-nav">
+        <a routerLink="home">
+            <img src="name_logo.svg" alt="Font-style logo" />
+        </a>
+
+        <ul>
+            <li>Education</li>
+            <li>Projects</li>
+            <li>Services</li>
+            <button class="button-style">Contact Me!</button>
+        </ul>
+    </nav>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav">
+        <a routerLink="home">
+            <img src="name_logo.svg" alt="Font-style logo" />
+        </a>
+
+        <div class="nav-menu-button" (pointerdown)="openNavModal()">
+            <fa-icon [icon]="faBars"></fa-icon>
+        </div>
     </nav>
 </header>

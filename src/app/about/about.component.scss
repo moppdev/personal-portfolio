@@ -1,0 +1,28 @@
+@use "../variables" as *;
+
+#picture-div {
+    text-align: center;
+}
+
+#picture {
+    border-radius: 11em;
+    border: solid 0.5em $base-text-color;
+    width: 60%;
+    height: 20%;
+    margin-top: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+#title {
+    text-align: center;
+}
+
+.button {
+    @include button-style;
+}
+
+#about-div {
+    * {
+        margin: 0;
+    }
+}

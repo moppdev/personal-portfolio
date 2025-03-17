@@ -1,3 +1,74 @@
-nav {
-    padding: 1.5em;
+@use "../variables" as *;
+
+* {
+    font-family: "Hind";
+}
+
+.mobile-nav-panel {
+    font-size: 6em;
+    scroll-behavior: none;
+}
+
+.mobile-nav {
+
+    &:hover {
+        background-color: #cfd9df;
+    }
+
+    .nav-menu-button {
+        float: right;
+        position: relative;
+        font-size: 2em;
+        width: 1em;
+        float: right;
+        padding: 0.5em;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    img {
+        height: fit-content;
+        width: 9em;
+        float: left;
+        margin: 1.72em 0 0 1em;
+    }
+}
+
+.desktop-nav {
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+    @media (min-width: 768px) and (max-width: 800px) {
+        display: block;
+    }
+
+    padding: 1.3em;
+
+    ul {
+        width: auto;
+        float: right;
+        margin-right: 0em;
+        margin-top: 0.4em;
+        font-size: 1.1em;
+        
+        li {
+            display: inline;
+            margin: 1em 2.5em 0 1em;
+        }
+    }
+
+    img {
+        height: fit-content;
+        width: 9em;
+        float: left;
+        margin: 1.3em 0 0 1em;
+        font-size: 1.1em;
+    }
+}
+
+button {
+    @include button-style;
 }

@@ -14,11 +14,15 @@ export class AboutComponent implements OnInit {
   // inject the infoService to access the JSON
   infoService = inject(InfoService);
 
+  //
+  about = "";
+
   ngOnInit() 
   {
-    console.log(this.infoService.about);
-
-    console.log(this.infoService.education);
+    if (this.infoService.about)
+    {
+      this.about = this.infoService.about;
+    }
   }
 
 }

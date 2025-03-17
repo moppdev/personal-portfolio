@@ -70,16 +70,16 @@
     ],
     "projects": [
         {
-            "title": "",
-            "description": "",
+            "title": "How To Vote 2024",
+            "description": "A site that was meant to help potential eligible South African voters to get registered on the voters' roll and encourage them to vote for the opposition in the 2024 general elections.",
             "images": [],
-            "stack": []
+            "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "Leaflet.js", "PHP"]
         },
         {
-            "title": "",
-            "description": "",
+            "title": "Dirt Oval Pointskeeping Program (DORPS)",
+            "description": "A Windows-platform desktop application that allows point keepers at dirt oval races to effectively keep score of all the races held and sort the racers' positions on the leaderboard for the day according to those scores.",
             "images": [],
-            "stack": []
+            "stack": ["Delphi"]
         }
     ],
     "services": [

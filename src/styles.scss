@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@use "app/variables" as *;
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Hind:wght@300;400;500;600;700&family=Oswald:wght@200..700&display=swap');
 
-$base-text-color: #81a4cd;
-$base-back-color: #003554;
-$nav-foot-color: #051923;
 
 header, footer, nav {
     background-color: $nav-foot-color;
@@ -19,12 +17,18 @@ section {
     color: $base-text-color;
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow-x: hidden;
 }
 
 h1 {
     font-family: "Oswald", sans-serif;
+    font-weight: lighter;
+    font-size: 2.25em;
+
+    @media (min-width: 766px)
+    {
+        font-size: 1em;
+    }
 }
 
 h2, h3, h4, h5, h6 {
