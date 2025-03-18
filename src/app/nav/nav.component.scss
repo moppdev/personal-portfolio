@@ -6,7 +6,6 @@
 
 .mobile-nav-panel {
     font-size: 6em;
-    scroll-behavior: none;
 }
 
 .mobile-nav {
@@ -71,4 +70,18 @@
 
 button {
     @include button-style;
+}
+
+.nav-link {
+    &:hover{
+        animation: 1s link-fade;
+        animation-fill-mode: forwards;
+        cursor: pointer;
+    }
+
+    @keyframes link-fade {
+        100% {
+            color: white;
+        }
+    }
 }

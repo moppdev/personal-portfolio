@@ -1,5 +1,5 @@
 {
-    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae sapien rhoncus, scelerisque erat dignissim, sodales purus. Donec lobortis dui ut velit malesuada, eu fermentum felis posuere. Donec sit amet lacus ultrices, tristique lorem sed, efficitur nunc. Cras auctor vulputate massa eget viverra. Nulla non mi sagittis, tempor nisi id, eleifend eros. Donec laoreet erat nibh, vel facilisis purus finibus sed. Duis non imperdiet nulla. Phasellus leo velit, scelerisque ut luctus eget, iaculis efficitur dolor. Duis a odio finibus, hendrerit odio eu, ornare felis. In fermentum urna sapien, non ultrices ligula consequat quis. Fusce rutrum sagittis purus, eu hendrerit mi placerat sed. Sed euismod, erat a varius tincidunt, tortor nisl sagittis sapien, ac pretium augue metus consequat neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed aliquet rutrum ligula. Phasellus eleifend ante a nisl vestibulum, nec ornare odio tincidunt. Suspendisse convallis eleifend nunc, ac facilisis est sagittis sit amet.",
+    "about": "Nice to meet you! I'm an aspiring web and mobile developer with a passion for building practical, user-friendly solutions. I believe that technology should be simple, effective, and enhance everyday life. Whether it’s a website, an app, or a custom solution, my goal is to create intuitive experiences that make a difference. When I’m not coding, you’ll likely find me gaming on my PC, diving into books about history and politics, or enjoying Premier League Darts on a Thursday night.",
     "profile_pic": "marco.jpg",
     "education": [
         {
@@ -72,13 +72,13 @@
         {
             "title": "How To Vote 2024",
             "description": "A site that was meant to help potential eligible South African voters to get registered on the voters' roll and encourage them to vote for the opposition in the 2024 general elections.",
-            "images": [],
+            "content": [],
             "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "Leaflet.js", "PHP"]
         },
         {
             "title": "Dirt Oval Pointskeeping Program (DORPS)",
             "description": "A Windows-platform desktop application that allows point keepers at dirt oval races to effectively keep score of all the races held and sort the racers' positions on the leaderboard for the day according to those scores.",
-            "images": [],
+            "content": [],
             "stack": ["Delphi"]
         }
     ],

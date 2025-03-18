@@ -22,7 +22,8 @@ export class NavComponent {
     this.dialog.open(MobileNavModalComponent, {
       width: '100vw',
       height: '100vh',
-      hasBackdrop: false
+      closeOnNavigation: true,
+      panelClass: "nav-modal"
     });
   }
 }

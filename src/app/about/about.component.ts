@@ -14,8 +14,8 @@ export class AboutComponent implements OnInit {
   // inject the infoService to access the JSON
   infoService = inject(InfoService);
 
-  //
-  about = "";
+  // get the paragraph that will display on the component
+  about?: string;
 
   ngOnInit() 
   {

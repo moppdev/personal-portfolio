@@ -2,16 +2,42 @@
 $base-text-color: #81a4cd;
 $base-back-color: #003554;
 $nav-foot-color: #051923;
-$button-border: #b5c1c9;
+$button-border: #0a2c3d;
 
 // Used for the styling of buttons
 @mixin button-style {
     background-color: $base-text-color;
     color: $nav-foot-color;
+    cursor: pointer;
     font-family: "Hind", sans-serif;
+    text-align: center;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 0.6em;
     border-radius: 0.6em;
-    border: solid $button-border 0.2em;
+    border: solid $button-border 0.3em;
+
+    &:hover{
+        animation: button-fade 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 0ms;
+    }
+}
+
+// hover animation for buttons
+@keyframes button-fade {
+    0% {
+        border: solid #313233 0.3em;
+        color: white;
+    }
+    50% {
+        border: solid #b8bdc0 0.3em;
+        background-color: #1579b3;
+        color: white;
+    }
+    100% {
+        background-color: #0d6ba1;
+        border: solid #e2e7eb 0.3em;
+        color: white;
+    }
 }

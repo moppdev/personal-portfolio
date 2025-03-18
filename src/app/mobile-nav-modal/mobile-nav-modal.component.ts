@@ -5,7 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'mobile-nav-modal',
   standalone: true,
-  //imports: [RouterLink],
+  imports: [],
   templateUrl: './mobile-nav-modal.component.html',
   styleUrl: './mobile-nav-modal.component.scss'
 })
