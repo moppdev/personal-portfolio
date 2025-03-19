@@ -10,10 +10,6 @@
 
 .mobile-nav {
 
-    &:hover {
-        background-color: #cfd9df;
-    }
-
     .nav-menu-button {
         float: right;
         position: relative;
@@ -73,15 +69,5 @@ button {
 }
 
 .nav-link {
-    &:hover{
-        animation: 1s link-fade;
-        animation-fill-mode: forwards;
-        cursor: pointer;
-    }
-
-    @keyframes link-fade {
-        100% {
-            color: white;
-        }
-    }
+    @include nav-link;
 }

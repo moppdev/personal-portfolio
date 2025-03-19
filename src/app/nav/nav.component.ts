@@ -18,7 +18,6 @@ export class NavComponent {
   constructor(private dialog: MatDialog) {}
 
   openNavModal() {
-    console.log("AAAAAAAAAAAAA");
     this.dialog.open(MobileNavModalComponent, {
       width: '100vw',
       height: '100vh',

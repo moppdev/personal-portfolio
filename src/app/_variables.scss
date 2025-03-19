@@ -17,10 +17,30 @@ $button-border: #0a2c3d;
     border-radius: 0.6em;
     border: solid $button-border 0.3em;
 
-    &:hover{
+    &:hover {
         animation: button-fade 2s;
         animation-fill-mode: forwards;
         animation-delay: 0ms;
+    }
+}
+
+// For links
+@mixin nav-link {
+    &:hover{
+        animation: 1s link-fade;
+        animation-fill-mode: forwards;
+        cursor: pointer;
+    }
+
+    &:focus {
+        animation: 1s link-fade;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes link-fade {
+        100% {
+            color: white;
+        }
     }
 }
 
