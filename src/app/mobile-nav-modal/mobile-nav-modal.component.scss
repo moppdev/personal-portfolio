@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+button {
+    @include button-style;
+}
+
+img {
+    height: fit-content;
+    width: 9em;
+    float: left;
+    margin: 1.72em 0 0 1em;
+}
+
+#top > div {
+    font-size: 1.7em;
+    margin-left: 8.5em;
+    margin-top: 0.8em;
+}

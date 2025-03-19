@@ -36,6 +36,14 @@
         height: 50%;
     }
 
+    @media (width: 766px) {
+        border-radius: 14em;
+        width: 73%;
+        height: 40%;
+        margin-top: 3em;
+        margin-left: 2em;
+    }
+
     @media (min-width: 767px) and (max-width: 899px) {
         border-radius: 14em;
         width: 73%;
@@ -118,9 +126,15 @@
         }
     }
 
-    @media (min-width: 481px) and (max-width: 766px) {
+    @media (min-width: 481px) and (max-width: 767px) {
         p, #title {
             margin: 1em 1.8em 0;
+        }
+    }
+
+    @media (width: 766px) {
+        p {
+            margin: 1em 1em 0;
         }
     }
 

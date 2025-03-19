@@ -1,5 +1,18 @@
-    <div>
-        <h1>LMAO</h1>
+    <div id="nav-modal">
+            <div id="top">
+                <img src="name_logo.svg" alt="Font-style logo" />
+    
+                <div (pointerdown)="close()">
+                    <fa-icon [icon]="faClose"></fa-icon>
+                </div>
+            </div>
 
-        <div (pointerdown)="close()">Close</div>
+            <ul id="middle">
+                <li>Home <fa-icon [icon]="faIndicator"></fa-icon></li>
+                <li>Education <fa-icon [icon]="faIndicator"></fa-icon></li>
+                <li>Projects <fa-icon [icon]="faIndicator"></fa-icon></li>
+                <li>Services <fa-icon [icon]="faIndicator"></fa-icon></li>
+            </ul>
+
+            <button routerLink="contact" (pointerdown)="close()">Contact Me!</button>
     </div>
