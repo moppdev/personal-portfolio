@@ -24,6 +24,16 @@ $button-border: #0a2c3d;
     }
 }
 
+// for pages other than home/about
+@mixin content {
+    margin: 0.3em 1.3em;
+
+    @media (min-width: 1000px)
+    {
+        margin: 0.3em 5em;
+    }
+}
+
 // For links
 @mixin nav-link {
     &:hover{
@@ -59,5 +69,42 @@ $button-border: #0a2c3d;
         background-color: #0d6ba1;
         border: solid #e2e7eb 0.3em;
         color: white;
+    }
+}
+
+// modal animations
+@keyframes nav-open {
+    100% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes nav-close {
+    100% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    0% {
+        opacity: 1;
     }
 }

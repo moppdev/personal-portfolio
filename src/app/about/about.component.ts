@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { InfoService } from '../info.service';
+import { InfoService } from '../services/info.service';
 
 @Component({
   selector: 'app-about',

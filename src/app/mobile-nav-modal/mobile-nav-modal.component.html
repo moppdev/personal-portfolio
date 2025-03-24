@@ -1,18 +1,36 @@
     <div id="nav-modal">
-            <div id="top">
-                <img src="name_logo.svg" alt="Font-style logo" />
-    
+            <div id="close">
                 <div (pointerdown)="close()">
                     <fa-icon [icon]="faClose"></fa-icon>
                 </div>
             </div>
 
-            <ul id="middle">
-                <li>Home <fa-icon [icon]="faIndicator"></fa-icon></li>
-                <li>Education <fa-icon [icon]="faIndicator"></fa-icon></li>
-                <li>Projects <fa-icon [icon]="faIndicator"></fa-icon></li>
-                <li>Services <fa-icon [icon]="faIndicator"></fa-icon></li>
-            </ul>
+            <ul id="menu">
+                <li routerLink="/home" [tabIndex]="-1">
+                    Home 
+                    <span>
+                        <fa-icon [icon]="faIndicator"></fa-icon>
+                    </span>
+                </li>
+                <li  routerLink="/education" [tabIndex]="-1">
+                    Education 
+                    <span>
+                        <fa-icon [icon]="faIndicator"></fa-icon>
+                    </span>
+                </li>
+                <li  routerLink="/projects" [tabIndex]="-1">
+                    Projects 
+                    <span>
+                        <fa-icon [icon]="faIndicator"></fa-icon>
+                    </span>
+                </li>
+                <li routerLink="/services" [tabIndex]="-1">
+                    Services 
+                    <span>
+                        <fa-icon [icon]="faIndicator"></fa-icon>
+                    </span>
+                </li>
 
-            <button routerLink="contact" (pointerdown)="close()">Contact Me!</button>
+                <button routerLink="/contact" [tabIndex]="-1" (pointerdown)="close()">Contact Me!</button>
+            </ul>
     </div>

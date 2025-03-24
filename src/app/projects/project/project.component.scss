@@ -1,0 +1,74 @@
+@use "../../variables" as *;
+
+.ng-fa-icon {
+    color: $nav-foot-color;
+    @include nav-link;
+}
+
+.project {
+    background-color: $base-text-color;
+    color: $nav-foot-color;
+    border-radius: 2em;
+    margin: 0.5em 0em;
+    font-size: 0.65em;
+    padding: 1em;
+    aspect-ratio: 1/0.8;
+    overflow-y: hidden;
+
+    @media (min-width: 350px) and (max-width: 400px)
+    {
+        aspect-ratio: 1/1.3;
+    }
+
+    @media (min-width: 480px)
+    {
+        aspect-ratio: 1/2;
+    }
+
+    .example {
+        width: 50%;
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+img {
+    margin-right: 1em;
+    width: 100%;
+    aspect-ratio: 1/1.6;
+    border-radius: 1em;
+
+    @media (min-width: 480px)
+    {
+        
+    }
+}
+
+.demo {
+    padding-top: 1em;
+    a {
+        @include nav-link;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    // &: {
+    //     color: $nav-foot-color;
+    // }
+}
+
+.project-description {
+    margin-top: 0.5em;
+}
+
+.project-stack {
+    margin-top: 0.5em;
+
+    ul {
+        li {
+            fa-icon {
+                padding-right: 1.3em;
+                overflow-y: hidden;
+            }
+        }
+    }
+}

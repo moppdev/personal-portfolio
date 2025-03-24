@@ -1,3 +1,25 @@
 <section id="projects">
-    <p>projects works!</p>
+    <div class="content">
+        @if (checker)
+        {
+            <div id="project-div">
+                <h1>Projects</h1>
+    
+                <p>
+                    Click on any of the cards to view more information on a project
+                </p>
+            </div>
+
+            <div id="project-container">
+                @for (project of projects; track $index)
+                {
+                    <project [project]="project" />
+                }
+            </div>
+        }
+        @else 
+        {
+            <h2>{{ error }}</h2>
+        }
+    </div>
 </section>

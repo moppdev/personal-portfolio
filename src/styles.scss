@@ -2,13 +2,26 @@
 @use "app/variables" as *;
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Hind:wght@300;400;500;600;700&family=Oswald:wght@200..700&display=swap');
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.nav-showtime {
+    display: block;
+}
 
 header, footer, nav {
     background-color: $nav-foot-color;
     color: $base-text-color;
 }
 
-section {
+footer {
+    position: inherit;
+    bottom: 0;
+}
+
+section, #nav-modal  {
     background-color: $base-back-color;
     color: $base-text-color;
     height: 100vh;
@@ -19,6 +32,7 @@ section {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    z-index: 0;
 }
 
 h1 {
@@ -34,4 +48,5 @@ h1 {
 
 h2, h3, h4, h5, h6 {
     font-family: "Hind", sans-serif;
+    font-weight: lighter;
 }

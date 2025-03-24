@@ -1,0 +1,41 @@
+<div class="project">
+    <div class="example">
+        <img [src]="imgLink" alt="Example image of project" />
+    </div>
+
+        <div class="project-info">
+            <h2>
+                {{ project?.title }}
+
+                @if (project?.link)
+                {
+                    <a href="{{ project?.link }}" target="_blank" class="logo">
+                        <fa-icon [icon]="faGithub"></fa-icon>
+                    </a>
+                }
+            </h2>
+    
+            <div class="project-description">
+                <h3>Description:</h3>
+                {{ project?.description }}
+            </div>
+
+            <div class="project-stack">
+                <h3>Stack:</h3>
+                <ul>
+                    @for (tech of stack; track $index) 
+                    {
+                        <li>
+                             <fa-icon [icon]="faChevron"></fa-icon>{{ tech }}
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="demo">
+                <a href="">
+                    Want to see more? Get some demo pics and vids <span>right here</span>.
+                </a>
+            </div>
+        </div>
+</div>

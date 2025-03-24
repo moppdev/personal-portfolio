@@ -1,0 +1,20 @@
+@use "../variables" as *;
+
+.content {
+    @include content;
+}
+
+#project-div {
+    margin: 0.5em 0 1em 0;
+}
+
+#project-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.7em;
+
+    @media (max-width: 480px)
+    {
+        grid-template-columns: auto;
+    }
+}

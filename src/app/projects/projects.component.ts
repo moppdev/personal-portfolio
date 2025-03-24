@@ -1,12 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Project } from '../model/project.model';
+import { InfoService } from '../services/info.service';
+import { ProjectComponent } from "./project/project.component";
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [ProjectComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  projects?: Project[]
+  error?: string;
+  checker: boolean = false;
 
+  constructor(private infoService: InfoService)
+  {
+
+  }
+
+  ngOnInit(){
+    // Check if projects are not undefined, otherwise throw error
+    try {
+      this.projects = this.infoService.projects;
+      this.checker = true;
+    } catch (error) {
+      this.error = this.infoService.returnError;
+      throw new Error(`${error}`);
+    }
+  }
 }

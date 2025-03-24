@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
-import { InfoService } from './info.service';
+import { InfoService } from './services/info.service';
 
 @Component({
   selector: 'app-root',
