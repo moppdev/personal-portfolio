@@ -8,7 +8,7 @@ import { FooterComponent } from "../../footer/footer.component";
 @Component({
   selector: 'project',
   standalone: true,
-  imports: [FontAwesomeModule, FooterComponent],
+  imports: [FontAwesomeModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

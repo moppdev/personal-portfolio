@@ -87,8 +87,24 @@
     ],
     "services": [
         {
-            "service": "",
-            "brief_desc": ""
+            "service": "Front-End Development",
+            "brief_desc": "I create responsive and user-friendly interfaces with Angular, React, and Bootstrap. Fancy features dont mean much if no one wants to use them because of a bad UI..."
+        },
+        {
+            "service": "Back-End Development",
+            "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API or Express.js. I also provide other back-end solutions using PHP when needed."
+        },
+        {
+            "service": "Full-Stack Development",
+            "brief_desc": "Bridging front-end and back-end, I handle everything from UI/UX to database management, delivering complete and efficient solutions tailored to your needs."
+        },
+        {
+            "service": "Database Design & Management",
+            "brief_desc": "A well-designed database is key to any successful app. I design, optimize, and manage databases to keep data secure, organized, and running efficiently."
+        },
+        {
+            "service": "UX/UI Design",
+            "brief_desc": "A great UI should catch the user's eye while staying intuitive. I focus on UX design to ensure apps and websites are easy to navigate, visually appealing, and actually enjoyable to use."
         }
-    ]
+    ]    
 }

@@ -1,0 +1,17 @@
+<section id="services">
+    <div class="content">
+        <h1>Services</h1>
+        <p>Here are the services I offer!</p>
+
+        <div class="service-container">
+            @for (service of services; track $index) 
+            {
+                <service [service_info]="service"></service>
+            }
+        </div>
+
+        <button class="upwork">
+            Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
+        </button>
+    </div>
+</section>

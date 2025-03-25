@@ -1,0 +1,17 @@
+@use "../variables" as *;
+
+.content {
+    @include content;
+}
+
+.upwork {
+    @include button-style;
+    background-color: #178928;
+    margin: 0.5em 0 0 0.5em;
+    width: 90%;
+}
+
+.service-container {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}

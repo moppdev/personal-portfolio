@@ -1,0 +1,9 @@
+<div>
+    <button class="button" (pointerdown)="showDescription()">
+        <span>
+            <fa-icon [icon]="faChevron"></fa-icon>
+        </span> 
+        {{ service_info?.service }}
+    </button>
+    <div class="desc desc_hide">{{ service_info?.brief_desc }}</div>
+</div>

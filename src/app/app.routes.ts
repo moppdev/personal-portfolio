@@ -5,6 +5,7 @@ import { MobileNavModalComponent } from './mobile-nav-modal/mobile-nav-modal.com
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { EducationComponent } from './education/education.component';
+import { ServicesOfferedComponent } from './services-offered/services-offered.component';
 
 // Routes for the website
 export const routes: Routes = [
@@ -33,5 +34,9 @@ export const routes: Routes = [
     {
         path: "projects",
         component: ProjectsComponent
+    },
+    {
+        path: "services",
+        component: ServicesOfferedComponent
     }
 ];

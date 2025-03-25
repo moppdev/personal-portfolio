@@ -26,8 +26,7 @@ export class ProjectsComponent implements OnInit {
       this.projects = this.infoService.projects;
       this.checker = true;
     } catch (error) {
-      this.error = this.infoService.returnError;
-      throw new Error(`${error}`);
+      throw new Error(`${this.infoService.returnError}`);
     }
   }
 }
