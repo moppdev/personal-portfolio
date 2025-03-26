@@ -1,9 +1,9 @@
-<div>
-    <button class="button" (pointerdown)="showDescription()">
+<div name="service">
+    <button class="button" (pointerdown)="toggleDescription()">
         <span>
             <fa-icon [icon]="faChevron"></fa-icon>
         </span> 
         {{ service_info?.service }}
     </button>
-    <div class="desc desc_hide">{{ service_info?.brief_desc }}</div>
+    <div class="desc" [ngClass]="{'desc-hide': opened == false, 'desc-show': opened == true}">{{ service_info?.brief_desc }}</div>
 </div>

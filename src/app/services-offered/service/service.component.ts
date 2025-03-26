@@ -1,26 +1,32 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Services } from '../../model/services.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChevronUp, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'service',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, NgClass],
   templateUrl: './service.component.html',
   styleUrl: './service.component.scss'
 })
-export class ServiceComponent implements OnInit{
+export class ServiceComponent {
   @Input() service_info?: Services;
   faChevron = faChevronRight;
+  opened: boolean = false;
 
-  ngOnInit(): void {
-    console.log(this.service_info);
-  }
-
-  showDescription()
+  toggleDescription()
   {
-    
+    this.opened = !this.opened;
+    if (this.opened)
+    {
+      this.faChevron = faChevronDown;
+    }
+    else
+    {
+      this.faChevron = faChevronRight;
+    }
   }
 
 }

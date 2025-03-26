@@ -1,8 +1,9 @@
+// model types for each education type
 export class Education
 {
     institution?: string;
-    institution_img?: string;
     qualification?: string;
+    institution_img?: string;
     started?: string;
     finished?: string;
     grade?: string;
@@ -25,4 +26,16 @@ export class Certification
     {
         
     }
+}
+
+
+// type guards
+export function isEducation(item: Education | Certification) : item is Education 
+{
+    return 'qualification' in item && 'grade' in item;
+}
+
+export function isCertification(item: Education | Certification) : item is Certification
+{
+    return "skills_learned" in item && "link" in item;
 }

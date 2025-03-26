@@ -12,6 +12,8 @@ export class ModalService {
 
   // opens the modal
   openNavModal() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     if (!this.modal)
     {
       this.modal = this.dialog.open(MobileNavModalComponent, {

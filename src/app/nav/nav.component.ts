@@ -20,5 +20,6 @@ export class NavComponent {
   openNavModal() {
     // call function from service
     this.modal.openNavModal();
+    
   }
 }

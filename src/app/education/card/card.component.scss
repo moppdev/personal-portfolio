@@ -1,0 +1,67 @@
+@use "../../variables" as *;
+
+.education-card {
+    color: $nav-foot-color;
+    background-color: $base-text-color;
+    padding: 1.2em;
+    border-radius: 0.6em;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+hr {
+    color: $nav-foot-color;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.education {
+    div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1em;
+        column-gap: 1px;
+        margin-top: 1em;
+    }
+}
+
+.certification {
+    div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1em;
+        column-gap: 1em;
+        margin-top: 1em;
+    }
+
+    ul {
+        li {
+            text-align: left;
+            margin-top: 0.2em;
+                    fa-icon {
+                        padding-right: 1.3em;
+                    }
+            }
+        }
+}
+
+.education-content {
+    text-align: center;
+}
+
+.institution-img {
+    text-align: center;
+}
+
+    img {
+        width: 35%;
+        height: 100%;
+        border: solid 0.3em $nav-foot-color;
+        border-radius: 8em;
+    }
+
+h2 {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+}
