@@ -36,12 +36,12 @@
     padding-bottom: 1.3em;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
     padding: 0.6em;
     border-radius: 0.6em;
     border: solid $button-border 0.3em;
     display: block;
-    width: 92%;
+    width: 86%;
 
     @media (min-width: 480px) and (max-width: 767px)
     {
@@ -59,11 +59,11 @@ textarea {
     border-radius: 0.6em;
     border: solid $button-border 0.3em;
     display: block;
-    width: 92%;
+    width: 86%;
 
-    @media (min-width: 1000px)
+    @media (min-width: 480px) and (max-width: 767px)
     {
-        width: 95%;
+        width: 93%;
     }
 
     @media (min-width: 1000px)

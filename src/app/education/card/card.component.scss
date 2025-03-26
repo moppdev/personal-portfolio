@@ -28,7 +28,7 @@ hr {
 .certification {
     div {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 40% auto;
         gap: 1em;
         column-gap: 1em;
         margin-top: 1em;
@@ -39,7 +39,7 @@ hr {
             text-align: left;
             margin-top: 0.2em;
                     fa-icon {
-                        padding-right: 1.3em;
+                        padding-right: 0.3em;
                     }
             }
         }

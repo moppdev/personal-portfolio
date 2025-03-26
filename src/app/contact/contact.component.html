@@ -8,20 +8,20 @@
             </p>
         </div>
     
-        <form id="contact-me">
+        <form id="contact-me" [formGroup]="contact" (ngSubmit)="onSubmit()">
             <div class="form-input">
                 <label>Name:</label>
-                <input type="text" name="name" placeholder="John/Jane Doe"/>
+                <input type="text" name="name" formControlName="name" placeholder="John/Jane Doe"/>
             </div>        
             
             <div class="form-input">
                 <label>Email:</label>
-                <input type="text" name="email" placeholder="joesy@mail.doe"/>
+                <input type="email" name="email" formControlName="email" placeholder="joesy@mail.doe"/>
             </div>        
             
             <div class="form-input">
                 <label>Message:</label>
-                <textarea rows="10" cols="5" name="message" placeholder="Your message here..."></textarea>
+                <textarea rows="10" cols="5" name="message" formControlName="message" placeholder="Your message here..."></textarea>
             </div>
     
             <button type="submit" class="button">Submit</button>

@@ -38,14 +38,14 @@
             "title": "Foundational C# with Microsoft",
             "institution_img": "fcc_logo.png",
             "link": "https://freecodecamp.org/certification/moppel_02/foundational-c-sharp-with-microsoft",
-            "skills_learned": ["C#", "Programming", "Computer Science"]
+            "skills_learned": ["Basic C#"]
         },
         {
             "institution": "freeCodeCamp",
             "title": "JavaScript Algorithms and Data Structures",
             "institution_img": "fcc_logo.png",
             "link": "https://freecodecamp.org/certification/moppel_02/javascript-algorithms-and-data-structures",
-            "skills_learned": ["JavaScript", "Algorithms", "JSON", "Programming"]
+            "skills_learned": ["JavaScript", "Algorithms", "JSON"]
         },
         {
             "institution": "edX",
