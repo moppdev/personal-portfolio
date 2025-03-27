@@ -52,6 +52,10 @@ input[type="text"], input[type="email"] {
     {
         width: 60%;
     }
+
+    &.ng-invalid.ng-touched {
+        border: 0.3em solid #F44336;
+    }
 }
 
 textarea {
@@ -70,4 +74,28 @@ textarea {
     {
         width: 60%;
     }
+
+    &.ng-invalid.ng-touched {
+        border: 0.3em solid #F44336;
+    }
+}
+
+.form-result {
+    border-radius: 0.6em;
+    padding: 1em;
+
+    color: white;
+
+    fa-icon {
+        display: block;
+        font-size: 2em;
+    }
+}
+
+.result-positive {
+    background-color: #4CAF50;
+}
+
+.result-negative {
+    background-color: #F44336;
 }

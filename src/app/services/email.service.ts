@@ -10,18 +10,23 @@ export class EmailService {
 
   }
 
-  sendMail(form: HTMLFormElement)
+  // Sends the email
+  sendMail(params: {"name": string, "email": string, "message": string}): boolean
   {
-      emailjs.sendForm("service_wx1v6nx","template_q7ixw6r", form, {
+      emailjs.send("service_oa9n0ia","template_q7ixw6r", params, {
           publicKey: "Jd0izlLxFMGIXA9Ky",
         })
         .then(
           () => {
             console.log('SUCCESS!');
+            return true;
           },
           (error) => {
             console.log('FAILED...', (error as EmailJSResponseStatus).text);
+            return false;
           },
         );
+
+        return false;
     }
 }
