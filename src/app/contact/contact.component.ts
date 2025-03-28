@@ -41,7 +41,7 @@ export class ContactComponent implements OnInit {
   }
 
   // When the form is submitted
-  onSubmit()
+  async onSubmit()
   {
     this.contact.markAllAsTouched();
     this.clicked = true;
@@ -54,14 +54,9 @@ export class ContactComponent implements OnInit {
           "message": this.contact.controls["message"].value,
         }
         
-        if(this.emailService.sendMail(params))
+        if (await this.emailService.sendMail(params))
         {
           this.sent = true;
-          return;
-        }
-        else
-        {
-          this.sent = false;
         }
     };
     this.contact.reset();

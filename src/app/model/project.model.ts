@@ -5,4 +5,5 @@ export class Project
     content?: string[];
     stack? : string[];
     link?: null | string;
+    demo_link?: string;
 }

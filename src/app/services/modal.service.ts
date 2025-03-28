@@ -10,10 +10,14 @@ export class ModalService {
 
   constructor(private dialog: MatDialog) {}
 
+  // Using Angular Material's Dialog
   // opens the modal
   openNavModal() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+
+    // backdropClick
+
     if (!this.modal)
     {
       this.modal = this.dialog.open(MobileNavModalComponent, {
@@ -21,7 +25,11 @@ export class ModalService {
         height: '100%',
         closeOnNavigation: true,
         hasBackdrop: true,
+        disableClose: true,
+        backdropClass: "mobile-nav-backdrop",
+        delayFocusTrap: true
       });
+
     }
   }
 

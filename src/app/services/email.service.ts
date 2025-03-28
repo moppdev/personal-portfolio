@@ -11,9 +11,9 @@ export class EmailService {
   }
 
   // Sends the email
-  sendMail(params: {"name": string, "email": string, "message": string}): boolean
+  async sendMail(params: {"name": string, "email": string, "message": string}): Promise<boolean>
   {
-      emailjs.send("service_oa9n0ia","template_q7ixw6r", params, {
+      await emailjs.send("service_oa9n0ia","template_q7ixw6r", params, {
           publicKey: "Jd0izlLxFMGIXA9Ky",
         })
         .then(

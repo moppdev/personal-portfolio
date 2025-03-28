@@ -75,14 +75,16 @@
             "description": "A site that was meant to help potential eligible South African voters to get registered on the voters' roll and encourage them to vote for the opposition in the 2024 general elections.",
             "content": ["projects/howtovote2024/howtovote-home.gif"],
             "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "Leaflet.js", "PHP"],
-            "link": "https://github.com/moppdev/howto2024"
+            "link": "https://github.com/moppdev/howto2024",
+            "demo_link": "https://drive.google.com/drive/folders/18Od2kCiYjkLZn_nJZnKhHGxMFY8AFGLH?usp=sharing"
         },
         {
             "title": "Dirt Oval Pointskeeping Program (DORPS)",
             "description": "A Windows-platform desktop application that allows point keepers at dirt oval races to effectively keep score of all the races held for a day of racing.",
             "content": ["projects/dorps/dorps.gif"],
-            "stack": ["Delphi"],
-            "link": null
+            "stack": ["Delphi", "Microsoft Access"],
+            "link": null,
+            "demo_link": "https://drive.google.com/drive/folders/12oe_TpPDgHd-pP-BXccIZIc8iOx0BrRT?usp=sharing"
         }
     ],
     "services": [
