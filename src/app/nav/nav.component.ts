@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { RouterLink } from '@angular/router';
-import { MobileNavModalComponent } from '../mobile-nav-modal/mobile-nav-modal.component';
 import { ModalService } from '../services/modal.service';
+import { slidingNavAnimation } from '../model/animations';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
   imports: [FontAwesomeModule, RouterLink],
+  animations: [slidingNavAnimation],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
@@ -19,7 +20,6 @@ export class NavComponent {
 
   openNavModal() {
     // call function from service
-    this.modal.openNavModal();
-    
+    this.modal.openNavModal(); 
   }
 }

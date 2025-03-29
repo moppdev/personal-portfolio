@@ -1,46 +1,46 @@
 <div class="education-card">
-        <div class="institution-img">
-            <img [src]="imgLink" alt="Logo of {{info?.institution}}">
-        </div>
-        <h2>{{info?.institution}}</h2>
-        <hr>
-        <div class="education-content">
-            @if (isEducation)
-            {
-                <div class="education">
-                    <h3>{{ info.qualification }}</h3>
-                    <div>
-                        <p>
-                            Started:
-                        </p>  
-                        <span>{{ info.started }}</span>              
-                        <p>
-                            Finished:
-                        </p>  
-                        <span>{{ info.finished }}</span>              
-                        <p>
-                            Grade:
-                        </p>
-                        <span>{{ info.grade }}</span>
+            <div class="institution-img">
+                <img [src]="imgLink" alt="Logo of {{info?.institution}}">
+            </div>
+            <h2>{{info?.institution}}</h2>
+            <hr>
+            <div class="education-content">
+                @if (isEducation)
+                {
+                    <div class="education">
+                        <h3>{{ info.qualification }}</h3>
+                        <div>
+                            <p>
+                                Started:
+                            </p>  
+                            <span>{{ info.started }}</span>              
+                            <p>
+                                Finished:
+                            </p>  
+                            <span>{{ info.finished }}</span>              
+                            <p>
+                                Grade:
+                            </p>
+                            <span>{{ info.grade }}</span>
+                        </div>
                     </div>
-                </div>
-            }
-            @else if (isCertification)
-            {
-                <div class="certification">
-                    <h3>{{ info.title }}</h3>
-                    <div>
-                        <p>Skills Learned:</p>
-                        <ul>
-                            @for (skill of info.skills_learned; track $index)
-                            {
-                                <li>
-                                    <fa-icon [icon]="faChevron"></fa-icon>{{ skill }}
-                                </li>
-                            }
-                        </ul>
+                }
+                @else if (isCertification)
+                {
+                    <div class="certification">
+                        <h3>{{ info.title }}</h3>
+                        <div>
+                            <p>Skills Learned:</p>
+                            <ul>
+                                @for (skill of info.skills_learned; track $index)
+                                {
+                                    <li>
+                                        <fa-icon [icon]="faChevron"></fa-icon>{{ skill }}
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            }
-        </div>
+                }
+            </div>
 </div>

@@ -28,5 +28,13 @@ export class ServicesOfferedComponent implements OnInit {
       } catch (error) {
         throw new Error(`${this.infoService.returnError}`);
       }
-  }  
+  }
+
+  // Function that takes the user to Upwork
+  // Decided on this because implementing an a tag with the button breaks the styling
+  goToUpwork()
+  {
+    const upwork = "https://www.upwork.com/freelancers/~013ad2ed4e7209d5f9?mp_source=share";
+    window.open(upwork, "_blank");
+  }
 }

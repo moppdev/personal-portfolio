@@ -1,25 +1,30 @@
 <section id="education">
     @if (checker)
     {
-        <div class="content">
+        <div class="education-swiper swiper">
             <h1>Education</h1>
-    
-                @for (qualification of education; track $index) 
-                {
-                    <!-- Card -->
-                    <card [info]="qualification" />
-                }
-        </div>
-    
-        <div class="content">
-            <h1>Certifications</h1>
 
-                @for (cert of certifications; track $index) 
-                {
-                    <!-- Card -->
-                    <card [info]="cert" />
-                }
-        </div>
+            <div class="swiper-wrapper">
+              @for (qualification of education; track $index) {
+                <app-card class="swiper-slide" [info]="qualification"></app-card>
+              }
+            </div>
+
+            <div class="education-next swiper-button-next"></div>
+            <div class="education-prev swiper-button-prev"></div>
+          </div>
+    
+            <div class="cert-swiper swiper">
+                <h1>Certifications</h1>
+                <div class="swiper-wrapper">
+                    @for (cert of certifications; track $index) {
+                        <app-card class="swiper-slide" [info]="cert"></app-card>
+                    }
+                </div>
+
+                <div class="cert-next swiper-button-next"></div>
+                <div class="cert-prev swiper-button-prev"></div>
+            </div>
     }
     @else {
         <h2>{{ error }}</h2>

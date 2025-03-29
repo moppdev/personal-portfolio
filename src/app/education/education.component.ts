@@ -3,23 +3,23 @@ import { InfoService } from '../services/info.service';
 import { Education, Certification } from '../model/education.model';
 import { CardComponent } from "./card/card.component";
 import { Swiper } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import { AboutComponent } from "../about/about.component";
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, AboutComponent],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss'
 })
 export class EducationComponent implements OnInit {
   checker: boolean = false;
   error?: string;
-  swiper?: any;
   
   // variables to hold relevant info, checked by corresponding models
   education?: Education[];
@@ -34,34 +34,45 @@ export class EducationComponent implements OnInit {
 
   ngOnInit()
   {
-    const swiperParams: SwiperOptions = {
-      modules: [Navigation, Pagination],
-      slidesPerView: 2,
-      spaceBetween: 50,
-      direction: 'horizontal',
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      on: {
-        init: function () {
-          console.log('swiper initialized');
-        },
-      },
-    };
+    // On creation, education and certifications should be loaded and non-undefined
+    // Otherwise error is thrown
+      try {
+        this.education = this.infoService.education;
+        this.certifications = this.infoService.certifications;  
+        this.checker = true;
+        setTimeout(() => {
+          const eduSwiperOptions: SwiperOptions = {
+            modules: [Navigation],
+            direction: 'horizontal',
+            navigation: {
+              prevEl: ".education-prev",
+              nextEl: ".education-next"
+            }
+          };
     
-    this.swiper = new Swiper('.swiper', swiperParams);
-    //console.log(this.swiper);
+          const eduSwiper = new Swiper(".education-swiper", eduSwiperOptions);
+    
+          const certSwiperOptions: SwiperOptions = {
+            modules: [Navigation],
+            direction: 'horizontal',
+            navigation: {
+              prevEl: ".cert-prev",
+              nextEl: ".cert-next"
+            }
+          };
+    
+          const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
 
-      // On creation, education and certifications should be loaded and non-undefined
-  // Otherwise error is thrown
-     try {
-      this.education = this.infoService.education;
-      this.certifications = this.infoService.certifications;  
-      this.checker = true;
-    } catch (error) {
-      this.error = this.infoService.returnError;
-      throw new Error(`${error}`);
-    }
+          console.log('Swiper instance:', certSwiper);
+          console.log('Swiper slides:', certSwiper.slides);
+        }, 100);
+      } catch (error) {
+        this.error = this.infoService.returnError;
+        throw new Error(`${error}`);
+      }
   }
+    
+
+
 
 }

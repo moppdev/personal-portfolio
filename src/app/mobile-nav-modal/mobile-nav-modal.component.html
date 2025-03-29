@@ -1,4 +1,4 @@
-    <div id="nav-modal">
+    <div id="nav-modal" [@slidingNavAnimation]="'display'">
             <div id="close">
                 <div (pointerdown)="close()">
                     <fa-icon [icon]="faClose"></fa-icon>
@@ -6,31 +6,31 @@
             </div>
 
             <ul id="menu">
-                <li routerLink="/home" [tabIndex]="-1">
+                <li (pointerdown)="navNavigation('home')" [tabIndex]="-1">
                     Home 
                     <span>
                         <fa-icon [icon]="faIndicator"></fa-icon>
                     </span>
                 </li>
-                <li  routerLink="/education" [tabIndex]="-1">
+                <li  (pointerdown)="navNavigation('education')" [tabIndex]="-1">
                     Education 
                     <span>
                         <fa-icon [icon]="faIndicator"></fa-icon>
                     </span>
                 </li>
-                <li  routerLink="/projects" [tabIndex]="-1">
+                <li  (pointerdown)="navNavigation('projects')" [tabIndex]="-1">
                     Projects 
                     <span>
                         <fa-icon [icon]="faIndicator"></fa-icon>
                     </span>
                 </li>
-                <li routerLink="/services" [tabIndex]="-1">
+                <li (pointerdown)="navNavigation('services')" [tabIndex]="-1">
                     Services 
                     <span>
                         <fa-icon [icon]="faIndicator"></fa-icon>
                     </span>
                 </li>
 
-                <button routerLink="/contact" [tabIndex]="-1">Contact Me!</button>
+                <button (pointerdown)="navNavigation('contact')" [tabIndex]="-1">Contact Me!</button>
             </ul>
     </div>

@@ -4,24 +4,28 @@ button {
     @include button-style;
     width: 90%;
     margin-left: 0.7em;
+
+    @media (min-width: 600px)
+    {
+        width: 95%;
+    }
 }
 
 #close > div {
     font-size: 2.5em;
     right: 0.8em;
     position: absolute;
-    margin-top: 0.8em;
     @media (min-width: 375px) and (max-width: 480px)
     {
-        right: 1em;
+        right: 0.4em;
     }
     @media (min-width: 481px) and (max-width: 550px)
     {
-        right: 0.6em;
+        right: 0.4em;
     }
     @media (min-width: 551px)
     {
-        right: 0.7em;
+        right: 0.4em;
     }
 }
 
@@ -31,11 +35,6 @@ button {
     height: 100%;
     z-index: 1;
     position: fixed;
-
-    @media (min-width: 481px)
-    {
-        width: 50%;
-    }
 
     @media (min-width: 768px)
     {
@@ -47,13 +46,22 @@ button {
     margin-top: 6.5em;
     font-size: 1.3em;
     li {
-        margin-bottom: 3em;
+        margin-bottom: 4em;
         margin-top: 0.5em;
         margin-left: 1em;
+        border-bottom: $base-text-color 1px solid;
+        margin-right: 1em;
+        padding-bottom: 0.5em;
+        
         span {
-            right: 1.8em;   
+            right: 1.2em;   
             position: absolute;
             font-size: 1.1em;
+
+            @media (max-width: 240px)
+            {
+                display: none;
+            }
         }
     }
 }

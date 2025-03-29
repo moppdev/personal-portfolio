@@ -1,11 +1,34 @@
 @use "../variables" as *;
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
 
 .content {
     @include content;
 }
 
-.swiper {
-    width: 100%;
-    height: 100%;
+.education-swiper, .cert-swiper {
+  width: 80%;
+  height: 100%;
+
+//   // Fix for slide transitions
+//   .swiper-wrapper {
+//     box-sizing: border-box; // Prevents overflow
+//   }
+
+  // Ensure cards don't overflow
+  .swiper-slide {
+    width: 100% !important; // Force full width
+    height: auto !important;
+    overflow: hidden; // Prevent content from breaking layout
   }
+
+  .swiper-slide-active {
+    border: 2px solid red !important; // Visual indicator
+  }
+
+  .swiper-button-next, 
+  .swiper-button-prev {
+    color: $nav-foot-color;
+  }
+}
   

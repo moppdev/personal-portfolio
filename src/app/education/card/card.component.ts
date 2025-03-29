@@ -4,8 +4,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 
+
 @Component({
-  selector: 'card',
+  selector: 'app-card',
   standalone: true,
   imports: [FontAwesomeModule],
   templateUrl: './card.component.html',
@@ -30,7 +31,6 @@ export class CardComponent implements OnInit {
         // return error
       }
     }
-
   }
 
 }
