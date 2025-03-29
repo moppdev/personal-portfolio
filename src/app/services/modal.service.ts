@@ -3,10 +3,11 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MobileNavModalComponent } from '../mobile-nav-modal/mobile-nav-modal.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
   modal?: MatDialogRef<MobileNavModalComponent, any>;
+  navState: "display" | "exit" = "exit";
 
   constructor(private dialog: MatDialog) {}
 
@@ -14,7 +15,8 @@ export class ModalService {
   // opens the modal
   openNavModal() {
     // backdropClick
-
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     if (!this.modal)
     {
       this.modal = this.dialog.open(MobileNavModalComponent, {
@@ -23,10 +25,9 @@ export class ModalService {
         closeOnNavigation: true,
         hasBackdrop: false,
         disableClose: true,
-        enterAnimationDuration: 200,
+        exitAnimationDuration: 700,
         delayFocusTrap: true
       });
-
     }
   }
 
@@ -34,6 +35,8 @@ export class ModalService {
   close() {
     if (this.modal)
     {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
       this.modal.close();
       this.modal = undefined;
     }
