@@ -5,8 +5,71 @@
     background-color: $base-text-color;
     padding: 1.2em;
     border-radius: 0.6em;
-    margin-top: 1em;
+    margin-top: 0.3em;
     margin-bottom: 0.3em;
+
+    @media (min-width: 768px)
+    {
+        padding: 1.2em;
+        border-radius: 0.6em;
+        margin-top: 1em;
+        margin-bottom: 0.3em;
+    }
+}
+
+.cert-card {
+    color: $nav-foot-color;
+    background-color: $base-text-color;
+    padding: 1.2em;
+    border-radius: 0.6em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    aspect-ratio: 1/1.35;
+
+    @media (min-width: 480px) and (max-width: 529px)
+    {
+        aspect-ratio: 1/2.4;
+    }
+
+    @media (min-width: 530px) and (max-width: 599px)
+    {
+        aspect-ratio: 1/2.1;
+    }
+
+    @media (min-width: 600px) and (max-width: 700px)
+    {
+        aspect-ratio: 1/1.7;
+    }
+
+    .certification {
+        div {
+            display: grid;
+            grid-template-columns: 40% auto;
+            gap: 1em;
+            column-gap: 1em;
+            margin-top: 1em;
+    
+            p {
+                font-weight: bold;
+            }
+
+            @media (min-width: 480px)
+            {
+                display: block;
+            }
+        }
+    
+        ul {
+            margin-top: 0em;
+            li {
+                text-align: left;
+                margin-top: 0.2em;
+                        fa-icon {
+                            padding-right: 0.3em;
+                        }
+                }
+            }
+    }
 }
 
 hr {
@@ -23,26 +86,6 @@ hr {
         column-gap: 1px;
         margin-top: 1em;
     }
-}
-
-.certification {
-    div {
-        display: grid;
-        grid-template-columns: 40% auto;
-        gap: 1em;
-        column-gap: 1em;
-        margin-top: 1em;
-    }
-
-    ul {
-        li {
-            text-align: left;
-            margin-top: 0.2em;
-                    fa-icon {
-                        padding-right: 0.3em;
-                    }
-            }
-        }
 }
 
 .education-content {

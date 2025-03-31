@@ -6,24 +6,17 @@
     @include content;
 }
 
-.education-swiper, .cert-swiper {
-  width: 80%;
-  height: 100%;
-
-//   // Fix for slide transitions
-//   .swiper-wrapper {
-//     box-sizing: border-box; // Prevents overflow
-//   }
-
-  // Ensure cards don't overflow
-  .swiper-slide {
-    width: 100% !important; // Force full width
-    height: auto !important;
-    overflow: hidden; // Prevent content from breaking layout
+.education, .cert-swiper {
+  div {
+    margin: 1em 0;
   }
+}
 
-  .swiper-slide-active {
-    border: 2px solid red !important; // Visual indicator
+.education-swiper, .cert-swiper {
+  overflow-x: visible !important;
+
+  .swiper-wrapper {
+    overflow-x: visible !important;
   }
 
   .swiper-button-next, 

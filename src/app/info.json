@@ -53,17 +53,9 @@
             "institution_img": "edx_logo.png",
             "link": "https://credentials.edx.org/credentials/30c3b3a1dfbc454a8448b6927affa925/",
             "skills_learned": [
-                "SQL",
                 "JavaScript",
                 "Python",
                 "Django",
-                "Flask",
-                "HTML & CSS",
-                "Bootstrap",
-                "Web Development",
-                "Front-End Development",
-                "Back-End Development",
-                "Database Design",
                 "APIs",
                 "Problem Solving"
             ]
@@ -90,7 +82,7 @@
     "services": [
         {
             "service": "Front-End Development",
-            "brief_desc": "I create responsive and user-friendly interfaces with Angular, React, and Bootstrap. Fancy features dont mean much if no one wants to use them because of a bad UI..."
+            "brief_desc": "I create responsive and user-friendly interfaces with Angular, SASS and libraries such as Bootstrap or Angular Material. Fancy features dont mean much if no one wants to use them because of a bad UI..."
         },
         {
             "service": "Back-End Development",

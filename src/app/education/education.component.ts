@@ -8,16 +8,18 @@ import { SwiperOptions } from 'swiper/types';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import { AboutComponent } from "../about/about.component";
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CardComponent, AboutComponent],
+  imports: [CardComponent],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss'
 })
 export class EducationComponent implements OnInit {
+  // TS for the Education page
+
+
   checker: boolean = false;
   error?: string;
   
@@ -32,41 +34,54 @@ export class EducationComponent implements OnInit {
   }
 
 
+  // On creation of component
   ngOnInit()
   {
-    // On creation, education and certifications should be loaded and non-undefined
+    // education and certifications should be loaded and non-undefined, and Swiper.js loaded
     // Otherwise error is thrown
       try {
         this.education = this.infoService.education;
         this.certifications = this.infoService.certifications;  
         this.checker = true;
+
+        // postpone the following
         setTimeout(() => {
-          const eduSwiperOptions: SwiperOptions = {
-            modules: [Navigation],
-            direction: 'horizontal',
-            navigation: {
-              prevEl: ".education-prev",
-              nextEl: ".education-next"
-            }
-          };
+
+          /// Use Swiper.js to make Certifications and Education more intuitive ///
+          // const eduSwiperOptions: SwiperOptions = {
+          //   modules: [Navigation],
+          //   direction: 'horizontal',
+          //   navigation: {
+          //     prevEl: ".education-prev",
+          //     nextEl: ".education-next"
+          //   }
+          // };
     
-          const eduSwiper = new Swiper(".education-swiper", eduSwiperOptions);
+          // const eduSwiper = new Swiper(".education-swiper", eduSwiperOptions);
     
+          // Instantiate SwiperOptions' options to use for the certSwiper instance
           const certSwiperOptions: SwiperOptions = {
             modules: [Navigation],
             direction: 'horizontal',
+            spaceBetween: 20,
             navigation: {
-              prevEl: ".cert-prev",
-              nextEl: ".cert-next"
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next"
+            },
+            breakpoints: {
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              }
             }
           };
     
+          // Create new Swiper instance
           const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
-
-          console.log('Swiper instance:', certSwiper);
-          console.log('Swiper slides:', certSwiper.slides);
         }, 100);
+        
       } catch (error) {
+        // throw error
         this.error = this.infoService.returnError;
         throw new Error(`${error}`);
       }
