@@ -46,8 +46,42 @@ section, #nav-modal  {
     background-color: $base-back-color;
     color: $base-text-color;
     overflow-y: hidden;
-    padding-bottom: 10em;
     padding-top: 2em;
+
+    @media (min-width: 467px) and (max-width: 765px)
+    {
+        padding-bottom: 13em;
+    }
+
+    @media (width: 766px)
+    {
+        padding-bottom: 11em;
+    }
+
+    @media (min-width: 767px) and (max-width: 899px)
+    {
+        padding-bottom: 23em;
+    }
+
+    @media (min-width: 900px) and (max-width: 999px)
+    {
+        padding-bottom: 25em;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1600px)
+    {
+        padding-bottom: 26em;
+    }
+
+    @media (min-width: 1600px) and (max-width: 1700px)
+    {
+        padding-bottom: 17em;
+    }
+
+    @media (min-width: 1701px)
+    {
+        padding-bottom: 14em;
+    }
 }
 
 * {

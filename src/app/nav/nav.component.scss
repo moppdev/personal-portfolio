@@ -4,14 +4,6 @@
     font-family: "Hind";
 }
 
-.nav-modal-control {
-    display: none;
-
-    @media (min-width: 768px) {
-        display: none;
-    }
-}
-
 .mobile-nav {
 
     .nav-menu-button {
@@ -23,7 +15,7 @@
         padding: 0.5em;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 800px) {
         display: none;
     }
 
@@ -36,12 +28,8 @@
 }
 
 .desktop-nav {
-    @media (max-width: 767px) {
+    @media (max-width: 800px) {
         display: none;
-    }
-
-    @media (min-width: 768px) and (max-width: 800px) {
-        display: block;
     }
 
     padding: 1.3em;
@@ -49,7 +37,7 @@
     ul {
         width: auto;
         float: right;
-        margin-right: 0em;
+        margin-right: 1em;
         margin-top: 0.4em;
         font-size: 1.1em;
         
