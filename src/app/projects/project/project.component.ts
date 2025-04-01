@@ -3,7 +3,6 @@ import { Project } from '../../model/project.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { FooterComponent } from "../../footer/footer.component";
 
 @Component({
   selector: 'project',
@@ -17,12 +16,13 @@ export class ProjectComponent implements OnInit {
   @Input() project?: Project;
   faGithub = faGithub
   faChevron = faChevronRight;
-  imgLink: any;
+  imgLink?: string;
+  content: string[] | undefined;
   stack: any;
 
   ngOnInit(): void {
-    this.imgLink = this.project?.content;
-    this.imgLink = "../../../../" + this.imgLink[0];
+    this.content = this.project?.content;
+    this.imgLink = "../../../../" + this.content![0];
 
     this.stack = this.project?.stack;
   }

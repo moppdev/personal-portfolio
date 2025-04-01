@@ -45,7 +45,7 @@ export class EducationComponent implements OnInit {
         this.checker = true;
 
         // postpone the following
-        const delayed = setTimeout(() => {
+        setTimeout(() => {
 
           /// Use Swiper.js to make Certifications and Education more intuitive ///
           // const eduSwiperOptions: SwiperOptions = {
@@ -79,6 +79,7 @@ export class EducationComponent implements OnInit {
           };
     
           // Create new Swiper instance
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
         }, 100);
         

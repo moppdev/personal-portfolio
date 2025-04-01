@@ -1,5 +1,5 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, NgControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
 
     if (this.contact.valid)
     {
-        let params = {
+        const params = {
           "name": this.contact.controls["name"].value,
           "email": this.contact.controls["email"].value,
           "message": this.contact.controls["message"].value,

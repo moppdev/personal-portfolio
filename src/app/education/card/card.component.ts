@@ -13,6 +13,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './card.component.scss'
 })
 export class CardComponent implements OnInit {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input() info?: any;
   isEducation: boolean = false;
   isCertification: boolean = false;

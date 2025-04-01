@@ -14,7 +14,6 @@ export class ModalService {
   // Using Angular Material's Dialog
   // opens the modal
   openNavModal() {
-    // backdropClick
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     if (!this.modal)
@@ -35,8 +34,6 @@ export class ModalService {
   close() {
     if (this.modal)
     {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
       this.modal.close();
       this.modal = undefined;
     }
