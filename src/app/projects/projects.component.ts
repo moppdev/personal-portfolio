@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Project } from '../model/project.model';
 import { InfoService } from '../services/info.service';
 import { ProjectComponent } from "./project/project.component";
@@ -15,10 +15,8 @@ export class ProjectsComponent implements OnInit {
   error?: string;
   checker: boolean = false;
 
-  constructor(private infoService: InfoService)
-  {
-
-  }
+  // Inject the InfoService
+  private infoService = inject(InfoService);
 
   ngOnInit(){
     // Check if projects are not undefined, otherwise throw error

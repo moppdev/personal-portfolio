@@ -10,6 +10,8 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+  // Font Awesome Icons
   faLinkedin = faLinkedin;
   faGithub = faGithub;
 

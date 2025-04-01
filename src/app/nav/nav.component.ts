@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { RouterLink } from '@angular/router';
@@ -12,10 +12,13 @@ import { ModalService } from '../services/modal.service';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
+  // Font Awesome Icon
   faBars = faBars;
 
-  constructor(private modal: ModalService) {}
+  // Inject the ModalService
+  private modal = inject(ModalService)
 
+  // Open the mobile nav modal
   openNavModal() {
     // call function from service
     this.modal.openNavModal(); 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ServiceComponent } from './service/service.component';
 import { Services } from '../model/services.model';
 import { InfoService } from '../services/info.service';
@@ -16,13 +16,13 @@ export class ServicesOfferedComponent implements OnInit {
   services?: Services[];
   faUpwork = faSquareUpwork;
 
-  constructor(private infoService: InfoService)
-  {
-
-  }
+  // Inject the InfoService
+  private infoService = inject(InfoService);
 
   ngOnInit()
   {
+    // When component is initialized, check if services is defined
+    // Otherwise, throw error
       try {
         this.services = this.infoService.services;
       } catch (error) {

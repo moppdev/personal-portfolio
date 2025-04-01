@@ -14,16 +14,24 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 export class ProjectComponent implements OnInit {
   // Get a project as input
   @Input() project?: Project;
+
+  // Font Awesome Icons
   faGithub = faGithub
   faChevron = faChevronRight;
-  imgLink?: string;
-  content: string[] | undefined;
-  stack: any;
 
-  ngOnInit(): void {
+  // 
+  imgLink?: string;
+  content?: string[];
+  stack?: string[];
+
+  ngOnInit() {
+    // Get the content
     this.content = this.project?.content;
+
+    // Generate the image link for the project
     this.imgLink = "../../../../" + this.content![0];
 
+    // Get the stack used for the project
     this.stack = this.project?.stack;
   }
 }

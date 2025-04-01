@@ -1,10 +1,14 @@
     <div id="nav-modal">
+        <!-- HTML component for mobile-nav-modal, modal that pops up when hamburger button 
+        is clicked on mobile-->
             <div id="close">
+                <!-- Close button -->
                 <div (pointerdown)="close()">
                     <fa-icon [icon]="faClose"></fa-icon>
                 </div>
             </div>
 
+            <!-- Nav Links -->
             <ul id="menu">
                 <li (pointerdown)="navNavigation('home')" [tabIndex]="-1">
                     Home 

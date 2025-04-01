@@ -1,11 +1,13 @@
 <section id="projects">
     <div class="content">
+        <!-- HTML component for projects-->
         @if (checker)
         {
             <div id="project-div">
                 <h1>Projects</h1>
             </div>
 
+            <!-- For every project, load a Project component -->
             <div id="project-container">
                 @for (project of projects; track $index)
                 {

@@ -38,10 +38,10 @@ export class InfoService {
     return infoJson.services;
   }
 
-  // error message for if something goes wrong with the JSON
-  get returnError()
-  {
-    return "Something went wrong with retrieving information from the JSON.";
-  }
+  // // error message for if something goes wrong with the JSON
+  // get returnError()
+  // {
+  //   return "Something went wrong with retrieving information from the JSON.";
+  // }
 
 }

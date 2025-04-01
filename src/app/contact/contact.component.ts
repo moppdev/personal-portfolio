@@ -13,7 +13,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit {
+  // TS file for contact component
+
+  // Inject the EmailService
   private emailService = inject(EmailService);
+
+  // Get icons and set checkers
   faCheck = faCheck;
   faXmark = faXmark;
   invalids: boolean = false;
@@ -43,22 +48,31 @@ export class ContactComponent implements OnInit {
   // When the form is submitted
   async onSubmit()
   {
+    // Mark all inputs as touched
     this.contact.markAllAsTouched();
+    
+    
     this.clicked = true;
 
+    // Check if the form is valid
     if (this.contact.valid)
     {
+      // If it is, send the values of elements in form
+      // in JSON format to the sendMail function in EmailService
         const params = {
           "name": this.contact.controls["name"].value,
           "email": this.contact.controls["email"].value,
           "message": this.contact.controls["message"].value,
         }
         
+        // Use EmailService to send mail
         if (await this.emailService.sendMail(params))
         {
           this.sent = true;
         }
     };
+
+    // Reset the form
     this.contact.reset();
   }
 }

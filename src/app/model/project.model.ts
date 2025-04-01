@@ -1,3 +1,4 @@
+// Model type for projects
 export class Project
 {
     title?: string;

@@ -23,6 +23,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() 
   {
+    // Check if about is defined
     if (this.infoService.about)
     {
       this.about = this.infoService.about;

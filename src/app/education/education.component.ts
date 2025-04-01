@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { InfoService } from '../services/info.service';
 import { Education, Certification } from '../model/education.model';
 import { CardComponent } from "./card/card.component";
@@ -17,8 +17,7 @@ import 'swiper/scss/pagination';
   styleUrl: './education.component.scss'
 })
 export class EducationComponent implements OnInit {
-  // TS for the Education page
-
+  // TS for the Education component
 
   checker: boolean = false;
   error?: string;
@@ -28,10 +27,7 @@ export class EducationComponent implements OnInit {
   certifications?: Certification[];
 
   // inject the InfoService
-  constructor (private infoService: InfoService)
-  {
-
-  }
+  private infoService = inject(InfoService);
 
 
   // On creation of component

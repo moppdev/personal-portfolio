@@ -1,10 +1,12 @@
 <header>
     <!-- Desktop nav -->
     <nav class="desktop-nav">
+        <!-- Home link -->
         <a routerLink="home">
             <img src="name_logo.svg" alt="Font-style logo" />
         </a>
 
+        <!-- Nav links -->
         <ul>
             <li routerLink="education" class="nav-link">Education</li>
             <li routerLink="projects" class="nav-link">Projects</li>
@@ -15,10 +17,12 @@
 
     <!-- Mobile nav -->
     <nav class="mobile-nav">
+        <!-- Home link -->
         <a routerLink="home">
             <img src="name_logo.svg" alt="Font-style logo" />
         </a>
 
+        <!-- Nav hamburger button -->
         <div class="nav-menu-button" (pointerdown)="openNavModal()">
             <fa-icon [icon]="faBars"></fa-icon>
         </div>

@@ -1,12 +1,17 @@
 <div class="project">
+    <!-- HTML component for project -->
+
+    <!-- Image of the project -->
     <div class="example">
         <img [src]="imgLink" alt="Example image of project" priority/>
     </div>
 
+        <!-- Display all project info-->
         <div class="project-info">
             <h2>
                 {{ project?.title }}
 
+                <!-- If link is defined, create a link with GitHub icon-->
                 @if (project?.link)
                 {
                     <a href="{{ project?.link }}" target="_blank" class="logo">
@@ -20,6 +25,7 @@
                 {{ project?.description }}
             </div>
 
+            <!-- For each tech in the stack, add it to the ul -->
             <div class="project-stack">
                 <h3>Stack:</h3>
                 <ul>
@@ -32,6 +38,7 @@
                 </ul>
             </div>
 
+            <!-- Link to more demo pics and vids of a project on Google Drive -->
             <div class="demo">
                 <a href="{{ project?.demo_link }}" target="_blank">
                     Want to see more? Get some demo pics and vids <span>right here</span>.

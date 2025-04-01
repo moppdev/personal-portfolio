@@ -1,25 +1,33 @@
 <section id="education">
     @if (checker)
     {
+      <!-- HTML component for education-->
         <div class="content">
+          
+          <!-- Education section -->
           <div class="education">
             <h1>Education</h1>
 
+            <!-- For every qualification, create a Card instance-->
             <div>
-              @for (qualification of education; track $index) {
-                <app-card [info]="qualification"></app-card>
-              }
+                @for (qualification of education; track $index) {
+                  <app-card [info]="qualification"></app-card>
+                }
             </div>
           </div>
     
+          <!-- Certification section, using Swiper.js-->
             <div class="cert-swiper">
                 <h1>Certifications</h1>
+
+                <!-- For every certification, create a swiper-slide/Card instance-->
                 <div class="swiper-wrapper">
                     @for (cert of certifications; track $index) {
                         <app-card class="swiper-slide" [info]="cert"></app-card>
                     }
                 </div>
 
+                <!-- Navigation buttons for Swiper.js -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>

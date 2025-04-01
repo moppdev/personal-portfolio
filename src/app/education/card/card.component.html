@@ -1,5 +1,6 @@
 @if (isEducation)
 {
+    <!-- If info is education, render Education version of Card-->
     <div class="education-card">
             <div class="institution-img">
                 <img [src]="imgLink" alt="Logo of {{info?.institution}}">
@@ -29,6 +30,7 @@
 }
 @else if (isCertification)
 {
+    <!-- If info is certification, render Certification version of Card-->
     <div class="cert-card">
         <div class="institution-img">
             <img [src]="imgLink" alt="Logo of {{info?.institution}}">
@@ -41,6 +43,7 @@
                     <div>
                         <p>Skills Learned:</p>
                         <ul>
+                            <!-- Display all skills -->
                             @for (skill of info.skills_learned; track $index)
                             {
                                 <li>

@@ -1,10 +1,13 @@
 <section id="about">
+    <!-- HTML component for about -->
     @if (checker)
     {
+        <!-- Profile pic -->
         <div id="picture-div">
             <img src="marco.jpg" id="picture" alt="Image of me" priority placeholder/>
         </div>
     
+        <!-- About section -->
         <div id="about-div">
             <h1 id="title">Hi, I'm Marco!</h1>
     
@@ -12,6 +15,7 @@
                 {{ this.about }}
             </p>
         
+            <!-- CV downloader -->
             <a href="" download>
                 <button class="button">Get my CV!</button>
             </a>
@@ -19,6 +23,7 @@
     }
     @else
     {
+        <!-- If something goes wrong with JSON, throw error-->
         <app-error-success-card></app-error-success-card>
     }
 </section>

@@ -3,8 +3,6 @@ import { isCertification, isEducation } from '../../model/education.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-
-
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -22,11 +20,17 @@ export class CardComponent implements OnInit {
 
   ngOnInit()
   {
+    // If info is defined
     if (this.info)
     {
+      // Get the image link needed
       this.imgLink = "logos/" + this.info.institution_img;
+
+      // Check for Education and Certification types
       this.isCertification = isCertification(this.info);
       this.isEducation = isEducation(this.info);
+
+      
       if (!this.isCertification && !this.isEducation)
       {
         // return error

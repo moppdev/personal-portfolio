@@ -1,8 +1,10 @@
 <section id="services">
     <div class="content">
+        <!-- HTML component for services-offered -->
         <h1>Services</h1>
         <p>Here are the services I offer!</p>
 
+        <!-- For every service, generate a Service component-->
         <div class="service-container">
             @for (service of services; track $index) 
             {
@@ -10,6 +12,7 @@
             }
         </div>
 
+        <!-- Button that takes users to my Upwork profile-->
         <button class="upwork" (click)="goToUpwork()">
                 Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
         </button>
