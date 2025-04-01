@@ -1,0 +1,19 @@
+.result-card {
+    border-radius: 0.6em;
+    padding: 1em;
+    width: 38%;
+    color: white;
+
+    fa-icon {
+        display: block;
+        font-size: 2em;
+    }
+}
+
+.result-positive {
+    background-color: #4CAF50;
+}
+
+.result-negative {
+    background-color: #F44336;
+}

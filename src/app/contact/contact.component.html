@@ -24,26 +24,8 @@
                 <textarea rows="10" cols="5" name="message" formControlName="message" placeholder="Your message here..."></textarea>
             </div>
 
-            <div class="form-result" [style.display]="invalids ? 'block' : 'none'" [class]="contact.valid ? 'result-positive' : 'result-negative'">
-                @if (contact.invalid)
-                {
-                    <fa-icon [icon]="faXmark"></fa-icon>
-                    <p>Your form is invalid, please check:</p>
-                }
-            </div>
+            <div class="form-result" [style.display]="clicked ? 'block' : 'none'">
 
-            <div class="form-result" [style.display]="clicked ? 'block' : 'none'" [class]="contact.valid ? 'result-positive' : 'result-negative'">
-                @if (sent)
-                {
-                    <fa-icon [icon]="faCheck"></fa-icon>
-                    <p>Your message was sent successfully!</p>
-                }
-                @else
-                {
-                    <fa-icon [icon]="faXmark"></fa-icon>
-                    <p>Something went wrong with the sending process. I apologise for the incovenience</p>
-                    <p>Please try again later. </p>
-                }
             </div>
     
             <button type="submit" class="button">Submit</button>

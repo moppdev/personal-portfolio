@@ -1,17 +1,24 @@
 <section id="about">
-    <div id="picture-div">
-        <img src="marco.jpg" id="picture" alt="Image of me" priority placeholder/>
-    </div>
-
-    <div id="about-div">
-        <h1 id="title">Hi, I'm Marco!</h1>
-
-        <p>
-            {{ this.about }}
-        </p>
+    @if (checker)
+    {
+        <div id="picture-div">
+            <img src="marco.jpg" id="picture" alt="Image of me" priority placeholder/>
+        </div>
     
-        <a href="" download>
-            <button class="button">Get my CV!</button>
-        </a>
-    </div>
+        <div id="about-div">
+            <h1 id="title">Hi, I'm Marco!</h1>
+    
+            <p>
+                {{ this.about }}
+            </p>
+        
+            <a href="" download>
+                <button class="button">Get my CV!</button>
+            </a>
+        </div>
+    }
+    @else
+    {
+        <app-error-success-card></app-error-success-card>
+    }
 </section>

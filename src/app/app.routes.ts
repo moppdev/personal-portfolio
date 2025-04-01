@@ -1,40 +1,29 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
-import { EducationComponent } from './education/education.component';
-import { ServicesOfferedComponent } from './services-offered/services-offered.component';
 
-// Routes for the website
+// Routes for the website, using lazy loading for all routes
 export const routes: Routes = [
-    // {
-    //     path: "**",
-    //     loadComponent() {
-    //         return 
-    //     },
-    // }
-    {
-        path: "",
-        component: AboutComponent
-    },
     {
         path: "home",
-        component: AboutComponent
+        loadComponent: () => import("./about/about.component").then(mod => mod.AboutComponent)
     },
     {
         path: "contact",
-        component: ContactComponent
+        loadComponent: () => import("./contact/contact.component").then(mod => mod.ContactComponent)
     },
     {
         path: "education",
-        component: EducationComponent
+        loadComponent: () => import("./education/education.component").then(mod => mod.EducationComponent)
     },
     {
         path: "projects",
-        component: ProjectsComponent
+        loadComponent: () => import("./projects/projects.component").then(mod => mod.ProjectsComponent)
     },
     {
         path: "services",
-        component: ServicesOfferedComponent
+        loadComponent: () => import("./services-offered/services-offered.component").then(mod => mod.ServicesOfferedComponent)
+    },
+    {
+        path: "**",
+        loadComponent: () => import("./four-oh-four/four-oh-four.component").then(mod => mod.FourOhFourComponent)
     }
 ];
