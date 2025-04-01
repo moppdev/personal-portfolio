@@ -1,5 +1,5 @@
 {
-    "about": "Nice to meet you! I'm an aspiring web and mobile developer with a passion for building practical, user-friendly solutions. I believe that technology should be simple, effective, and enhance everyday life. Whether it’s a website, an app, or a custom solution, my goal is to create intuitive experiences that make a difference. When I’m not coding, you’ll likely find me gaming on my PC, diving into books about history and politics, or enjoying Premier League Darts on a Thursday night.",
+    "about": "Nice to meet you! I'm an aspiring web and mobile developer with a passion for building practical, user-friendly solutions. I believe that technology should be simple, effective, and enhance everyday life. Whether it’s a website, an app, or a custom solution, my goal is to create intuitive experiences that make a difference. When I’m not coding, you’ll likely find me gaming on my PC, diving into books about history and politics, or enjoying Premier League Darts on a Thursday night!",
     "profile_pic": "marco.jpg",
     "education": [
         {
@@ -87,10 +87,6 @@
         {
             "service": "Back-End Development",
             "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API or Express.js. I also provide other back-end solutions using PHP when needed."
-        },
-        {
-            "service": "Full-Stack Development",
-            "brief_desc": "Bridging front-end and back-end, I handle everything from UI/UX to database management, delivering complete and efficient solutions tailored to your needs."
         },
         {
             "service": "Database Design & Management",

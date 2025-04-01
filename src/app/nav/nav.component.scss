@@ -63,3 +63,8 @@ button {
 .nav-link {
     @include nav-link;
 }
+
+header {
+    position: sticky;
+    top: 0;
+}

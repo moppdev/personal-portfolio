@@ -19,9 +19,41 @@
     overflow-x: visible !important;
   }
 
-  .swiper-button-next, 
-  .swiper-button-prev {
+  div.swiper-button-next, 
+  div.swiper-button-prev {
     color: $nav-foot-color;
+    margin-right: 1em;
+    font-weight: bold;
+
+    @media (max-width: 460px)
+    {
+      margin-top: 9em;
+      margin-right: 0.7em;
+      margin-left: 0.7em;
+    }
+
+    
+    @media (min-width: 460px)
+    {
+      margin-top: 9em;
+      margin-right: 0.7em;
+      margin-left: 0.7em;
+    }
+
+    @media (min-width: 768px)
+    {
+      margin-top: 5em;
+      margin-right: 0.7em;
+      margin-left: 0.7em;
+    }
+
+    @media (min-width: 1000px)
+    {
+      margin-top: 3em;
+      margin-right: 0.7em;
+      margin-left: 0.7em;
+      color: $base-text-color;
+    }
   }
 }
   

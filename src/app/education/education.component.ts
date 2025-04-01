@@ -45,7 +45,7 @@ export class EducationComponent implements OnInit {
         this.checker = true;
 
         // postpone the following
-        setTimeout(() => {
+        const delayed = setTimeout(() => {
 
           /// Use Swiper.js to make Certifications and Education more intuitive ///
           // const eduSwiperOptions: SwiperOptions = {
@@ -71,7 +71,9 @@ export class EducationComponent implements OnInit {
             breakpoints: {
               480: {
                 slidesPerView: 2,
-                spaceBetween: 20
+              },
+              1100: {
+                slidesPerView: 3,
               }
             }
           };

@@ -8,12 +8,43 @@
     margin-top: 0.3em;
     margin-bottom: 0.3em;
 
+    h3{
+        text-align: center;
+    }
+
     @media (min-width: 768px)
     {
-        padding: 1.2em;
         border-radius: 0.6em;
-        margin-top: 1em;
         margin-bottom: 0.3em;
+    }
+
+    @media (min-width: 1100px)
+    {
+        width: 50%;
+    }
+
+    .institution-img {
+        img {
+            width: 35%;
+            height: 100%;
+            border: solid 0.3em $nav-foot-color;
+            border-radius: 8em;
+
+            @media (min-width: 600px)
+            {
+                width: 25%;
+            }
+
+            @media (min-width: 900px)
+            {
+                width: 20%;
+            }
+
+            @media (min-width: 1400px)
+            {
+                width: 15%;
+            }
+        }
     }
 }
 
@@ -25,6 +56,15 @@
     margin-top: 0.3em;
     margin-bottom: 0.3em;
     aspect-ratio: 1/1.35;
+
+    .institution-img {
+        img {
+            width: 35%;
+            height: 100%;
+            border: solid 0.3em $nav-foot-color;
+            border-radius: 8em;
+        }
+    }
 
     @media (min-width: 480px) and (max-width: 529px)
     {
@@ -41,7 +81,36 @@
         aspect-ratio: 1/1.7;
     }
 
+    @media (min-width: 1100px) and (max-width: 1299px)
+    {
+        aspect-ratio: 1/1.7;
+    }
+
+    @media (min-width: 1300px)
+    {
+        aspect-ratio: 1/1.4;
+    }
+    
+    @media (min-width: 1500px)
+    {
+        aspect-ratio: 1/1.1;
+    }
+        
+    @media (min-width: 1700px)
+    {
+        aspect-ratio: 1/1.0;
+    }
+
+    @media (min-width: 1900px)
+    {
+        aspect-ratio: 1/0.89;
+    }
+
     .certification {
+        h3{
+            text-align: center;
+        }
+
         div {
             display: grid;
             grid-template-columns: 40% auto;
@@ -68,7 +137,7 @@
                             padding-right: 0.3em;
                         }
                 }
-            }
+        }
     }
 }
 
@@ -88,20 +157,9 @@ hr {
     }
 }
 
-.education-content {
-    text-align: center;
-}
-
 .institution-img {
     text-align: center;
 }
-
-    img {
-        width: 35%;
-        height: 100%;
-        border: solid 0.3em $nav-foot-color;
-        border-radius: 8em;
-    }
 
 h2 {
     text-align: center;

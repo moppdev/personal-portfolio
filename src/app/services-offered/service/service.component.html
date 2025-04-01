@@ -1,9 +1,13 @@
+<!-- HTML component for each service offered-->
 <div name="service">
-    <button class="button" (pointerdown)="toggleDescription()">
+    <div class="service" (pointerdown)="toggleDescription()">
+        <!-- Icon and service offered-->
         <span>
             <fa-icon [icon]="faChevron"></fa-icon>
         </span> 
         {{ service_info?.service }}
-    </button>
-    <div class="desc" [ngClass]="{'desc-hide': opened == false, 'desc-show': opened == true}">{{ service_info?.brief_desc }}</div>
+        
+        <!-- Description -->
+        <div class="desc" [ngClass]="{'desc-hide': opened == false, 'desc-show': opened == true}">{{ service_info?.brief_desc }}</div>
+    </div>
 </div>
