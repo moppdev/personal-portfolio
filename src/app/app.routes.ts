@@ -1,10 +1,13 @@
 import { Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { ServicesOfferedComponent } from './services-offered/services-offered.component';
+import { EducationComponent } from './education/education.component';
 
-// Routes for the website, using lazy loading for all routes
+// Routes for the website, using lazy loading for most routes
 export const routes: Routes = [
     {
         path: "home",
-        loadComponent: () => import("./about/about.component").then(mod => mod.AboutComponent)
+        component: AboutComponent
     },
     {
         path: "contact",
@@ -12,7 +15,7 @@ export const routes: Routes = [
     },
     {
         path: "education",
-        loadComponent: () => import("./education/education.component").then(mod => mod.EducationComponent)
+        component: EducationComponent
     },
     {
         path: "projects",
@@ -20,7 +23,7 @@ export const routes: Routes = [
     },
     {
         path: "services",
-        loadComponent: () => import("./services-offered/services-offered.component").then(mod => mod.ServicesOfferedComponent)
+        component: ServicesOfferedComponent
     },
     {
         path: "**",

@@ -1,5 +1,11 @@
 @use "../variables" as *;
 
+.error-text {
+    color: #df3c30;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
 #contact {
     padding-bottom: 3em;
 }
@@ -17,6 +23,28 @@
     @media (min-width: 1000px)
     {
         width: 20%;
+    }
+}
+
+.button-disabled {
+    @include button-style;
+    background-color: #828b96;
+    width: 100%;
+    margin-top: 1em;
+    cursor: text;
+
+    @media (min-width: 767px) and (max-width: 1001px)
+    {
+        width: 25%;
+    }
+
+    @media (min-width: 1000px)
+    {
+        width: 20%;
+    }
+
+    &:hover {
+        animation: none;
     }
 }
 

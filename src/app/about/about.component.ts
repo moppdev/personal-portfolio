@@ -17,6 +17,7 @@ export class AboutComponent implements OnInit {
 
   // check if JSON is truthy
   checker: boolean = false;
+  errorMessage: string = "";
 
   // get the paragraph that will display on the component
   about?: string;
@@ -24,10 +25,13 @@ export class AboutComponent implements OnInit {
   ngOnInit() 
   {
     // Check if about is defined
-    if (this.infoService.about)
-    {
-      this.about = this.infoService.about;
-      this.checker = true;
+    try {
+        this.about = this.infoService.about;
+        this.checker = true;
+    } catch (error) {
+      this.checker = false;
+      this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
+      throw new Error(`${error}`);
     }
   }
 

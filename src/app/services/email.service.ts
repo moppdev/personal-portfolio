@@ -7,8 +7,9 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 export class EmailService {
 
   // Sends the email
-  async sendMail(params: {"name": string, "email": string, "message": string}): Promise<boolean>
+  async sendMail(params: {"name": string, "email": string, "message": string})
   {
+    let sent = false;
     // Use the params to make a call to email.js API
     // Public key and template key can be exposed as mentioned in docs
       await emailjs.send("service_oa9n0ia","template_q7ixw6r", params, {
@@ -16,15 +17,14 @@ export class EmailService {
         })
         .then(
           () => {
-            console.log('SUCCESS!');
-            return true;
+            sent = true;
           },
           (error) => {
-            console.log('FAILED...', (error as EmailJSResponseStatus).text);
-            return false;
+            //console.log('FAILED...', (error as EmailJSResponseStatus).text);
+            sent = false;
           },
         );
 
-        return false;
+        return sent;
     }
 }

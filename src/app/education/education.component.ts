@@ -8,11 +8,12 @@ import { SwiperOptions } from 'swiper/types';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, ErrorSuccessCardComponent],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss'
 })
@@ -20,7 +21,7 @@ export class EducationComponent implements OnInit {
   // TS for the Education component
 
   checker: boolean = false;
-  error?: string;
+  errorMessage: string = "";
   
   // variables to hold relevant info, checked by corresponding models
   education?: Education[];
@@ -81,7 +82,7 @@ export class EducationComponent implements OnInit {
         
       } catch (error) {
         // throw error
-        this.error = this.infoService.returnError;
+        this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
         throw new Error(`${error}`);
       }
   }

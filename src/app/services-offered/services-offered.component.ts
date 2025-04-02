@@ -4,17 +4,19 @@ import { Services } from '../model/services.model';
 import { InfoService } from '../services/info.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSquareUpwork } from '@fortawesome/free-brands-svg-icons';
+import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 
 @Component({
   selector: 'app-services-offered',
   standalone: true,
-  imports: [ServiceComponent, FontAwesomeModule],
+  imports: [ServiceComponent, FontAwesomeModule, ErrorSuccessCardComponent],
   templateUrl: './services-offered.component.html',
   styleUrl: './services-offered.component.scss'
 })
 export class ServicesOfferedComponent implements OnInit {
   services?: Services[];
   faUpwork = faSquareUpwork;
+  checker: boolean = false;
 
   // Inject the InfoService
   private infoService = inject(InfoService);
@@ -25,8 +27,9 @@ export class ServicesOfferedComponent implements OnInit {
     // Otherwise, throw error
       try {
         this.services = this.infoService.services;
+        this.checker = true;
       } catch (error) {
-        throw new Error(`${this.infoService.returnError}`);
+        throw new Error(`${error}`);
       }
   }
 

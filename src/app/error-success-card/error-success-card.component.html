@@ -1,4 +1,5 @@
 <div class="result-card" [class]="resultType ? 'result-positive' : 'result-negative'">
+    <!-- HTML component for error-success-card -->
     @if (resultType)
     {
         <fa-icon [icon]="faCheck"></fa-icon>
@@ -7,4 +8,5 @@
     {
         <fa-icon [icon]="faXmark"></fa-icon>
     }
+    <p>{{ message }}</p>
 </div>
