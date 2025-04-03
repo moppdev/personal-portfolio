@@ -1,5 +1,8 @@
 @use "../variables" as *;
 
+// SASS file for the About component
+
+// styling for the section itself
 #about {
     padding-top: 5em;
 
@@ -14,13 +17,73 @@
     }
 }
 
+// slide-in animation
+@keyframes slide-in {
+    0% {
+        transform: translateX(33em);
+    }
+    100% {
+        transform: translateX(0em);
+    }
+}
+
+// container for the title and about paragraph
+#about-div {
+    // animation
+    animation: slide-in 2s forwards;
+
+    @media (max-width: 480px) {
+        p, #title {
+            margin: 0.4em 2em 0;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        p, #title {
+            margin: 1em 1.8em 0;
+        }
+    }
+
+    @media (width: 766px) {
+        p {
+            margin: 1em 1em 0;
+        }
+    }
+
+    @media (min-width: 767px) {
+        p, #title {
+            margin: 1em 3em 0 0;
+        }
+    }
+
+    @media (min-width: 1300px) and (max-width: 1499px)
+    {
+        margin-top: 3em;
+    }
+
+    @media (min-width: 1500px)
+    {
+        margin-top: 4em;
+    }
+
+    @media (min-width: 1600px)
+    {
+        margin-top: 5em;
+    }
+}
+
+// container for the image of me
 #picture-div {
+    // animation
+    animation: slide-in 3s forwards;
+
     @media (max-width: 767px) {
         text-align: center;
         margin-top: 1em;
     }
 }
 
+// The actual image of me
 #picture {
     border: solid 0.5em $base-text-color;
 
@@ -119,6 +182,7 @@
     }
 }
 
+// Styling of the "Get my CV!" button
 .button {
     @include button-style;
     margin: 1em 1.5em 2em;
@@ -136,51 +200,4 @@
         width: 90%;
         margin: 1em 0em 2em;
     }
-}
-
-#about-div {
-    @media (max-width: 480px) {
-        p, #title {
-            margin: 0.4em 2em 0;
-        }
-    }
-
-    @media (min-width: 481px) and (max-width: 767px) {
-        p, #title {
-            margin: 1em 1.8em 0;
-        }
-    }
-
-    @media (width: 766px) {
-        p {
-            margin: 1em 1em 0;
-        }
-    }
-
-    @media (min-width: 767px) {
-        p, #title {
-            margin: 1em 3em 0 0;
-        }
-    }
-
-    @media (min-width: 1300px) and (max-width: 1499px)
-    {
-        margin-top: 3em;
-    }
-
-    @media (min-width: 1500px)
-    {
-        margin-top: 4em;
-    }
-
-    @media (min-width: 1600px)
-    {
-        margin-top: 5em;
-    }
-
-    // @media (min-width: 800px) {
-    //     * {
-    //         margin: 1em 4em 0 0;
-    //     }
-    // }
 }

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit {
   // TS file for contact component
 
   // Inject the EmailService
@@ -31,6 +31,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   validNameElem: boolean = false;
   validMessageElem: boolean = false;
   complete: boolean = false;
+  destroyRef: DestroyRef = inject(DestroyRef);
   
   // Create reactive form group that connects to elements on the page
   // Add required validators
@@ -73,20 +74,13 @@ export class ContactComponent implements OnInit, OnDestroy {
 
     // Add subs to array to use in OnDestroy
     this.elementSubs = [nameChange, emailChange, messageChange];
-  }
 
-  // When the component is destroyed
-  ngOnDestroy()
-  {
-    // Get DestroyRef
-    const destroyRef = inject(DestroyRef);
-
-    // Call onDestroy, to unsubscribe from each sub in elementSubs
-    destroyRef.onDestroy(() => {
-      this.elementSubs?.forEach(element => {
-        element.unsubscribe();
-      });
-    })
+        // Call onDestroy, to unsubscribe from each sub in elementSubs
+        this.destroyRef.onDestroy(() => {
+          this.elementSubs?.forEach(element => {
+            element.unsubscribe();
+          })
+        });
   }
 
   // When the form is submitted
@@ -120,17 +114,18 @@ export class ContactComponent implements OnInit, OnDestroy {
       } catch (error) {
           this.sent = false;
           this.sentMessage = "An unexpected error occurred. Please try again.";
+          throw new Error(`${error}`);
       }
     };
-
-    // Reset the form
-    this.contact.reset();
 
     this.complete = true;
 
     // hide the card
     setTimeout(() => {
       this.complete = false;
-    }, 30000);
+    }, 15000);
+
+      // Reset the form
+      this.contact.reset();
   }
 }

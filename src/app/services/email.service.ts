@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
+  // Service that sends the emails
 
   // Sends the email
   async sendMail(params: {"name": string, "email": string, "message": string})
@@ -20,7 +21,6 @@ export class EmailService {
             sent = true;
           },
           (error) => {
-            //console.log('FAILED...', (error as EmailJSResponseStatus).text);
             sent = false;
           },
         );

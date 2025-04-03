@@ -36,9 +36,37 @@ button {
     z-index: 1;
     position: fixed;
 
+    animation: slide-in 2s forwards;
+
+
+    // slide-in animation
+    @keyframes slide-in {
+        0% {
+            transform: translateX(-33em);
+        }
+        100% {
+            transform: translateX(0em);
+        }
+    }
+
     @media (min-width: 800px)
     {
         display: none;
+    }
+}
+
+.closing {
+    animation: slide-out 2s;
+
+
+    // slide-in animation
+    @keyframes slide-out {
+        0% {
+            transform: translateX(0em);
+        }
+        100% {
+            transform: translateX(-33em);
+        }
     }
 }
 

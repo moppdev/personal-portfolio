@@ -26,7 +26,7 @@ export class MobileNavModalComponent {
     if (path && typeof(path) == "string")
     {
       this.router.navigateByUrl(path);
-      setInterval(() => {} , 200);
+      setTimeout(() => {} , 200);
       this.close();
     }
   }

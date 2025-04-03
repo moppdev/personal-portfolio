@@ -1,9 +1,19 @@
 @use "../variables" as *;
-@import 'swiper/scss';
-@import 'swiper/scss/navigation';
 
 .content {
     @include content;
+    animation: slide-in 2s forwards;
+
+
+    // slide-in animation
+    @keyframes slide-in {
+        0% {
+            transform: translateX(-33em);
+        }
+        100% {
+            transform: translateX(0em);
+        }
+    }
 }
 
 .education, .cert-swiper {
@@ -52,7 +62,6 @@
       margin-top: 3em;
       margin-right: 0.7em;
       margin-left: 0.7em;
-      color: $base-text-color;
     }
   }
 }

@@ -1,3 +1,5 @@
+// SASS file for common variables and mixins used
+
 // common colours
 $base-text-color: #81a4cd;
 $base-back-color: #003554;
@@ -69,42 +71,5 @@ $button-border: #0a2c3d;
         background-color: #0d6ba1;
         border: solid #e2e7eb 0.3em;
         color: white;
-    }
-}
-
-// modal animations
-@keyframes nav-open {
-    100% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 0.75;
-    }
-    50% {
-        opacity: 0.50;
-    }
-    25% {
-        opacity: 0.25;
-    }
-    0% {
-        opacity: 0;
-    }
-}
-
-@keyframes nav-close {
-    100% {
-        opacity: 0;
-    }
-    75% {
-        opacity: 0.25;
-    }
-    50% {
-        opacity: 0.50;
-    }
-    25% {
-        opacity: 0.75;
-    }
-    0% {
-        opacity: 1;
     }
 }

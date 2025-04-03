@@ -32,27 +32,29 @@
 {
     <!-- If info is certification, render Certification version of Card-->
     <div class="cert-card">
-        <div class="institution-img">
-            <img [src]="imgLink" alt="Logo of {{info?.institution}}">
-        </div>
-        <h2>{{info?.institution}}</h2>
-        <hr>
-        <div class="education-content">
-                <div class="certification">
-                    <h3>{{ info.title }}</h3>
-                    <div>
-                        <p>Skills Learned:</p>
-                        <ul>
-                            <!-- Display all skills -->
-                            @for (skill of info.skills_learned; track $index)
-                            {
-                                <li>
-                                    <fa-icon [icon]="faChevron"></fa-icon>{{ skill }}
-                                </li>
-                            }
-                        </ul>
+        <a href="{{ info.link }}" target="_blank">
+            <div class="institution-img">
+                <img [src]="imgLink" alt="Logo of {{info?.institution}}">
+            </div>
+            <h2>{{info?.institution}}</h2>
+            <hr>
+            <div class="education-content">
+                    <div class="certification">
+                        <h3>{{ info.title }}</h3>
+                        <div>
+                            <p>Skills Learned:</p>
+                            <ul>
+                                <!-- Display all skills -->
+                                @for (skill of info.skills_learned; track $index)
+                                {
+                                    <li>
+                                        <fa-icon [icon]="faChevron"></fa-icon>{{ skill }}
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-        </div>
+            </div>
+        </a>
     </div>
 }

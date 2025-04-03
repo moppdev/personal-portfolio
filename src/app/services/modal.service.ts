@@ -8,6 +8,7 @@ import { MobileNavModalComponent } from '../mobile-nav-modal/mobile-nav-modal.co
 export class ModalService {
   modal?: MatDialogRef<MobileNavModalComponent, any>;
   navState: "display" | "exit" = "exit";
+  // Service that manages the mobile nav menu
 
   constructor(private dialog: MatDialog) {}
 
@@ -15,7 +16,6 @@ export class ModalService {
   // opens the modal
   openNavModal() {
     document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
     if (!this.modal)
     {
       this.modal = this.dialog.open(MobileNavModalComponent, {
@@ -24,7 +24,6 @@ export class ModalService {
         closeOnNavigation: true,
         hasBackdrop: false,
         disableClose: true,
-        exitAnimationDuration: 700,
         delayFocusTrap: true
       });
     }

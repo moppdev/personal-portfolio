@@ -2,6 +2,18 @@
 
 .content {
     @include content;
+
+    animation: slide-in 2s forwards;
+
+    // slide-in animation
+    @keyframes slide-in {
+        0% {
+            transform: translateX(-33em);
+        }
+        100% {
+            transform: translateX(0em);
+        }
+    }
 }
 
 .upwork {
