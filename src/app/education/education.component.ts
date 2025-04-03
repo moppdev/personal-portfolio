@@ -5,9 +5,9 @@ import { CardComponent } from "./card/card.component";
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 
 @Component({
@@ -76,8 +76,8 @@ export class EducationComponent implements OnInit {
           };
     
           // Create new Swiper instance
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
+          console.log(certSwiper);
         }, 100);
         
       } catch (error) {
