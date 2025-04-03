@@ -22,12 +22,12 @@
   }
 }
 
+.swiper-wrapper {
+  overflow-x: visible !important;
+}
+
 .education-swiper, .cert-swiper {
   overflow-x: visible !important;
-
-  .swiper-wrapper {
-    overflow-x: visible !important;
-  }
 
   div.swiper-button-next, 
   div.swiper-button-prev {
