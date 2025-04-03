@@ -8,6 +8,10 @@ import { ContactComponent } from './contact/contact.component';
 // Routes for the website, using lazy loading only for 404s
 export const routes: Routes = [
     {
+        path: "",
+        component: AboutComponent
+    },
+    {
         path: "home",
         component: AboutComponent
     },
@@ -25,7 +29,7 @@ export const routes: Routes = [
     },
     {
         path: "services",
-        component: ServicesOfferedComponent
+        loadComponent: () => import("./services-offered/services-offered.component").then(mod => mod.ServicesOfferedComponent)
     },
     {
         path: "**",
