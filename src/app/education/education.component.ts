@@ -1,9 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { InfoService } from '../services/info.service';
 import { Education, Certification } from '../model/education.model';
 import { CardComponent } from "./card/card.component";
 import { Swiper } from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,7 +17,7 @@ import { ErrorSuccessCardComponent } from "../error-success-card/error-success-c
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss'
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent implements OnInit, AfterViewInit {
   // TS for the Education component
 
   checker: boolean = false;
@@ -34,17 +34,22 @@ export class EducationComponent implements OnInit {
   // On creation of component
   ngOnInit()
   {
-    // education and certifications should be loaded and non-undefined, and Swiper.js loaded
+    // education and certifications should be loaded and non-undefined
     // Otherwise error is thrown
       try {
         this.education = this.infoService.education;
         this.certifications = this.infoService.certifications;  
-        this.checker = true;
+        this.checker = true;        
+      } catch (error) {
+        // throw error
+        this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
+        throw new Error(`${error}`);
+      }
+  }
 
-        // postpone the following
-        setTimeout(() => {
-
-          /// Use Swiper.js to make Certifications and Education more intuitive ///
+  ngAfterViewInit()
+  {
+              /// Use Swiper.js to make Certifications and Education more intuitive ///
           // const eduSwiperOptions: SwiperOptions = {
           //   modules: [Navigation],
           //   direction: 'horizontal',
@@ -55,36 +60,28 @@ export class EducationComponent implements OnInit {
           // };
     
           // const eduSwiper = new Swiper(".education-swiper", eduSwiperOptions);
-    
-          // Instantiate SwiperOptions' options to use for the certSwiper instance
-          const certSwiperOptions: SwiperOptions = {
-            modules: [Navigation],
-            direction: 'horizontal',
-            spaceBetween: 20,
-            navigation: {
-              prevEl: ".swiper-button-prev",
-              nextEl: ".swiper-button-next"
-            },
-            breakpoints: {
-              480: {
-                slidesPerView: 2,
-              },
-              1100: {
-                slidesPerView: 3,
-              }
-            }
-          };
-    
-          // Create new Swiper instance
-          const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
-          console.log(certSwiper);
-        }, 100);
-        
-      } catch (error) {
-        // throw error
-        this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
-        throw new Error(`${error}`);
-      }
+
+                // Instantiate SwiperOptions' options to use for the certSwiper instance
+                const certSwiperOptions: SwiperOptions = {
+                  modules: [Navigation, Pagination],
+                  direction: 'horizontal',
+                  spaceBetween: 20,
+                  navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                  },
+                  breakpoints: {
+                    480: {
+                      slidesPerView: 2,
+                    },
+                    1100: {
+                      slidesPerView: 3,
+                    }
+                  }
+                };
+          
+                // Create new Swiper instance
+                const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
   }
     
 
