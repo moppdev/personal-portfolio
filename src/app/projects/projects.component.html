@@ -1,24 +1,31 @@
 <section id="projects">
     <div class="content">
-        <!-- HTML component for projects-->
-        @if (checker)
+        @defer
         {
-            <div id="project-div">
-                <h1>Projects</h1>
-            </div>
+            <!-- HTML component for projects-->
+            @if (checker)
+            {
+                <div id="project-div">
+                    <h1>Projects</h1>
+                </div>
 
-            <!-- For every project, load a Project component -->
-            <div id="project-container">
-                @for (project of projects; track $index)
-                {
-                    <project [project]="project" />
-                }
-            </div>
+                <!-- For every project, load a Project component -->
+                <div id="project-container">
+                    @for (project of projects?.(); track $index)
+                    {
+                        <project [project]="project" />
+                    }
+                </div>
+            }
+            @else 
+            {
+                <!-- Show error card -->
+                <app-error-success-card></app-error-success-card>
+            }
         }
-        @else 
+        @loading 
         {
-            <!-- Show error card -->
-            <app-error-success-card></app-error-success-card>
+            <app-loading></app-loading>
         }
     </div>
 </section>

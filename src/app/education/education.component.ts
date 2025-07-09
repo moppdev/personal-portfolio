@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-education',
@@ -30,10 +31,16 @@ export class EducationComponent implements OnInit, AfterViewInit {
   // inject the InfoService
   private infoService = inject(InfoService);
 
+    // inject the seo service to run SEO
+  // This is a custom service that adds meta tags to the page
+  seo = inject(SeoService);
 
   // On creation of component
   ngOnInit()
   {
+    // run SEO
+    this.seo.getSEO();
+
     // education and certifications should be loaded and non-undefined
     // Otherwise error is thrown
       try {

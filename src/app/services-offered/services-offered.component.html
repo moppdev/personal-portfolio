@@ -1,27 +1,36 @@
 <section id="services">
-    @if (checker)
+    @defer
     {
-        <div class="content">
-            <!-- HTML component for services-offered -->
-            <h1>Services</h1>
-            <p>Here are the services I offer!</p>
-    
-            <!-- For every service, generate a Service component-->
-            <div class="service-container">
-                @for (service of services; track $index) 
-                {
-                    <service [service_info]="service"></service>
-                }
+        @if (checker)
+        {
+            <div class="content">
+                <!-- HTML component for services-offered -->
+                <h1>Services</h1>
+                <p>Here are the services I offer!</p>
+        
+                <!-- For every service, generate a Service component-->
+                <div class="service-container">
+                    @for (service of services(); track $index) 
+                    {
+                        <service [service_info]="service"></service>
+                    }
+                </div>
+        
+                <!-- Button that takes users to my Upwork profile-->
+                <button class="upwork" (click)="goToUpwork()">
+                        Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
+                </button>
             </div>
-    
-            <!-- Button that takes users to my Upwork profile-->
-            <button class="upwork" (click)="goToUpwork()">
-                    Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
-            </button>
-        </div>
+        }
+        @else 
+        {
+            <div class="content">
+                <app-error-success-card></app-error-success-card>
+            </div>
+        }
     }
-    @else 
+    @loading
     {
-        <app-error-success-card></app-error-success-card>
+        <app-loading></app-loading>
     }
 </section>

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal, Signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -6,11 +6,13 @@ import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 import { Subscription } from 'rxjs';
+import { LoadingComponent } from '../loading/loading.component';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, FontAwesomeModule, CommonModule, ErrorSuccessCardComponent],
+  imports: [ReactiveFormsModule, FontAwesomeModule, CommonModule, ErrorSuccessCardComponent, LoadingComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -20,11 +22,15 @@ export class ContactComponent implements OnInit {
   // Inject the EmailService
   private emailService = inject(EmailService);
 
+      // inject the seo service to run SEO
+  // This is a custom service that adds meta tags to the page
+  seo = inject(SeoService);
+
   // Get icons and set checkers
   faCheck = faCheck;
   faXmark = faXmark;
   invalids: boolean = false;
-  elementSubs?: Subscription[];
+  elementSubs?: Signal<Subscription[]>;
   sent?: boolean;
   sentMessage: string = "";
   validEmailElem: boolean = false;
@@ -52,6 +58,9 @@ export class ContactComponent implements OnInit {
   // On creation, subscribe to value changes of each form to check validity
   ngOnInit()
   {
+    // run SEO
+    this.seo.getSEO();
+
     // Get the controls
     const controls =  this.contact.controls;
 
@@ -73,13 +82,13 @@ export class ContactComponent implements OnInit {
     });
 
     // Add subs to array to use in OnDestroy
-    this.elementSubs = [nameChange, emailChange, messageChange];
+    this.elementSubs = signal([nameChange, emailChange, messageChange]);
 
         // Call onDestroy, to unsubscribe from each sub in elementSubs
         this.destroyRef.onDestroy(() => {
-          this.elementSubs?.forEach(element => {
-            element.unsubscribe();
-          })
+            this.elementSubs?.().forEach((element: Subscription) => {
+              element.unsubscribe();
+            })
         });
   }
 

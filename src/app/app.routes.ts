@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { EducationComponent } from './education/education.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
 
-// Routes for the website, using lazy loading only for 404s
+// Routes for the website, using lazy loading
 export const routes: Routes = [
     {
         path: "",
@@ -16,15 +13,15 @@ export const routes: Routes = [
     },
     {
         path: "contact",
-        component: ContactComponent
+        loadComponent: () => import('./contact/contact.component').then(mod => mod.ContactComponent)
     },
     {
         path: "education",
-        component: EducationComponent
+        loadComponent: () => import('./education/education.component').then(mod => mod.EducationComponent)
     },
     {
         path: "projects",
-        component: ProjectsComponent
+        loadComponent: () => import('./projects/projects.component').then(mod => mod.ProjectsComponent)
     },
     {
         path: "services",

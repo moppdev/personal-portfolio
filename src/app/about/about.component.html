@@ -4,7 +4,7 @@
     {
         <!-- Profile pic -->
         <div id="picture-div">
-            <img src="marco.jpg" id="picture" alt="Image of me" priority placeholder/>
+            <img [src]="pic" id="picture" alt="Image of me" fetchpriority="high"/>
         </div>
     
         <!-- About section -->
@@ -16,7 +16,7 @@
             </p>
         
             <!-- CV downloader -->
-            <a href="marcooppel_cv.pdf" download>
+            <a href="marcooppel_cv.pdf" download rel="noopener" type="application/pdf">
                 <button class="button">Get my CV!</button>
             </a>
         </div>

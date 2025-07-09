@@ -1,70 +1,76 @@
 <!-- HTML component for contact -->
 <section id="contact">
     <div class="content">
-        <!-- Heading -->
-        <div id="contact-div">
-            <h1>Contact Me</h1>
-    
-            <p>
-                Use the form below to send me a message whether it is an inquiry or simply business-related!
-            </p>
-        </div>
-    
-        <!-- Contact form -->
-        <form id="contact-me" name="contact" [formGroup]="contact" (ngSubmit)="onSubmit()">
-            <div class="form-input">
-                <label>Name:</label>
-                <input type="text" name="name" formControlName="name" placeholder="John/Jane Doe"/>
-                @if (contact.controls["name"].touched)
-                {
-                    @if (!validNameElem) {
-                        <p class="error-text">Please enter a valid name</p>
-                    }
-                }
-            </div>        
-            
-            <div class="form-input">
-                <label>Email:</label>
-                <input type="text" name="email" formControlName="email" placeholder="joesy@mail.doe"/>
-                @if (contact.controls["email"].touched)
-                {
-                    @if (!validEmailElem) {
-                        <p class="error-text">Please enter a valid email</p>
-                    }
-                }
-            </div>        
-            
-            <div class="form-input">
-                <label>Message:</label>
-                <textarea rows="10" cols="5" name="message" formControlName="message" placeholder="Your message here..."></textarea>
-                @if (contact.controls["message"].touched)
-                {
-                    @if (!validMessageElem) {
-                        <p class="error-text">Please enter a message</p>
-                    }
-                }
+        @defer
+        {
+            <!-- Heading -->
+            <div id="contact-div">
+                <h1>Contact Me</h1>
+        
+                <p>
+                    Use the form below to send me a message whether it is an inquiry or simply business-related!
+                </p>
             </div>
-    
-            @if (contact.valid)
-            {
-                <button  type="submit" class="button">Submit</button>
-            }
-            @else
-            {
-                <button disabled class="button-disabled">Submit</button>
-            }
-
-            <div class="form-result" [style.display]="complete ? 'block' : 'none'">
-                <!-- If the form is valid and email sends, show success -->
-                @if (sent)
+        
+            <!-- Contact form -->
+            <form id="contact-me" name="contact" [formGroup]="contact" (ngSubmit)="onSubmit()">
+                <div class="form-input">
+                    <label>Name:</label>
+                    <input type="text" name="name" formControlName="name" placeholder="John/Jane Doe"/>
+                    @if (contact.controls["name"].touched)
+                    {
+                        @if (!validNameElem) {
+                            <p class="error-text">Please enter a valid name</p>
+                        }
+                    }
+                </div>        
+                
+                <div class="form-input">
+                    <label>Email:</label>
+                    <input type="text" name="email" formControlName="email" placeholder="joesy@mail.doe"/>
+                    @if (contact.controls["email"].touched)
+                    {
+                        @if (!validEmailElem) {
+                            <p class="error-text">Please enter a valid email</p>
+                        }
+                    }
+                </div>        
+                
+                <div class="form-input">
+                    <label>Message:</label>
+                    <textarea rows="10" cols="5" name="message" formControlName="message" placeholder="Your message here..."></textarea>
+                    @if (contact.controls["message"].touched)
+                    {
+                        @if (!validMessageElem) {
+                            <p class="error-text">Please enter a message</p>
+                        }
+                    }
+                </div>
+        
+                @if (contact.valid)
                 {
-                    <app-error-success-card [resultType]="true" [message]="sentMessage"></app-error-success-card>
+                    <button  type="submit" class="button">Submit</button>
                 }
                 @else
                 {
-                    <app-error-success-card [message]="sentMessage"></app-error-success-card>
+                    <button disabled class="button-disabled">Submit</button>
                 }
-            </div>
-        </form>
+
+                <div class="form-result" [style.display]="complete ? 'block' : 'none'">
+                    <!-- If the form is valid and email sends, show success -->
+                    @if (sent)
+                    {
+                        <app-error-success-card [resultType]="true" [message]="sentMessage"></app-error-success-card>
+                    }
+                    @else
+                    {
+                        <app-error-success-card [message]="sentMessage"></app-error-success-card>
+                    }
+                </div>
+            </form>
+        }
+        @loading {
+            <app-loading></app-loading>
+        }
     </div>
 </section>
