@@ -18,7 +18,7 @@ export class SeoService
 
             // Open Graph
             { property: 'og:title', content: 'Marco Oppel | Web Developer Portfolio' },
-            { property: 'og:description', content: 'Explore the projects and skills of Marco Oppel, a modern web developer crafting elegant and responsive digital experiences.' },
+            { property: 'og:description', content: 'Explore the projects and skills of Marco Oppel, a web developer crafting responsive and accessible digital solutions.' },
             { property: 'og:type', content: 'website' },
             { property: 'og:url', content: 'https://maropp-portfolio.vercel.app' },
             { property: 'og:image', content: 'https://maropp-portfolio.vercel.app/marco_mobile.jpg'}

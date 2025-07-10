@@ -105,19 +105,19 @@
     "services": [
         {
             "service": "Front-End Development",
-            "brief_desc": "I create responsive and user-friendly interfaces with Angular, SASS and libraries such as Bootstrap or Angular Material. Fancy features dont mean much if no one wants to use them because of a bad UI..."
+            "brief_desc": "I create responsive and user-friendly interfaces with Angular, React, TypeScript and Tailwind CSS. Fancy features don't mean much if no one wants to use them because of a bad UI..."
         },
         {
             "service": "Back-End Development",
-            "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API or Express.js. I also provide other back-end solutions using PHP when needed."
+            "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API. I also provide other back-end solutions using PHP when needed."
         },
         {
             "service": "Database Design & Management",
-            "brief_desc": "A well-designed database is key to any successful app. I design, optimize, and manage databases to keep data secure, organized, and running efficiently."
+            "brief_desc": "A well-designed database is key to any successful app. I design, optimize, and manage databases to keep data secure, organized, and running efficiently. I generally use MySQL or Microsoft SQL Server for this, but I can also work with other databases if needed."
         },
         {
             "service": "UX/UI Design",
-            "brief_desc": "A great UI should catch the user's eye while staying intuitive. I focus on UX design to ensure apps and websites are easy to navigate, visually appealing, and actually enjoyable to use."
+            "brief_desc": "A great UI should catch the user's eye while staying intuitive. I focus on UX design using Figma to ensure apps and websites are easy to navigate, visually appealing, and actually enjoyable to use."
         }
     ]    
 }

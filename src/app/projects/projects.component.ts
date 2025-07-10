@@ -25,6 +25,12 @@ export class ProjectsComponent implements OnInit {
   seo = inject(SeoService);
 
   ngOnInit(){
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    }); // scroll to top of page
+
     // run SEO
     this.seo.getSEO();
 

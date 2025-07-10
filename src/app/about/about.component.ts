@@ -32,6 +32,12 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() 
   {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    }); // scroll to top of page
+
     // preload the image based on the screen size
     this.pic = (window.innerWidth < 600) ? "marco_mobile.jpg" : "marco.jpg";
     const link = document.createElement('link');

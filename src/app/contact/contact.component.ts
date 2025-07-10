@@ -58,6 +58,12 @@ export class ContactComponent implements OnInit {
   // On creation, subscribe to value changes of each form to check validity
   ngOnInit()
   {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    }); // scroll to top of page
+
     // run SEO
     this.seo.getSEO();
 
