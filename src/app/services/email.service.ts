@@ -22,6 +22,7 @@ export class EmailService {
           },
           (error) => {
             sent = false;
+            console.error(`Something went wrong when sending the email: ${error}`);
           },
         );
 

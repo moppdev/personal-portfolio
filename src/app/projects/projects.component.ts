@@ -31,8 +31,12 @@ export class ProjectsComponent implements OnInit {
       behavior: 'smooth'
     }); // scroll to top of page
 
-    // run SEO
-    this.seo.getSEO();
+    // Update page-specific SEO
+    this.seo.updatePageSEO(
+      'Projects | Marco Oppel',
+      'Explore my web development projects showcasing skills in Angular, React, and modern web technologies.',
+      '/projects'
+    );
 
     // Check if projects are not undefined, otherwise throw error
     try {

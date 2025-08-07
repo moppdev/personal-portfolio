@@ -35,8 +35,12 @@ export class ServicesOfferedComponent implements OnInit {
       behavior: 'smooth'
     }); // scroll to top of page
 
-     // run SEO
-    this.seo.getSEO();
+     // Update page-specific SEO
+    this.seo.updatePageSEO(
+      'Services | Marco Oppel',
+      'Professional web development services including Angular, React, and full-stack development solutions.',
+      '/services'
+    );
 
     // When component is initialized, check if services is defined
     // Otherwise, throw error

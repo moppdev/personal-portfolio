@@ -47,8 +47,12 @@ export class AboutComponent implements OnInit {
     link.setAttribute('fetchpriority', 'high');
     document.head.appendChild(link);
 
-    // run SEO
-    this.seo.getSEO();
+    // Update page-specific SEO
+    this.seo.updatePageSEO(
+      'Marco Oppel | Web Developer Portfolio',
+      'Welcome to Marco Oppel\'s portfolio. Passionate web developer creating modern, responsive, and accessible digital solutions.',
+      '/'
+    );
 
     // Check if about is defined
     try {

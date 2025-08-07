@@ -44,8 +44,12 @@ export class EducationComponent implements OnInit, AfterViewInit {
       behavior: 'smooth'
     }); // scroll to top of page
 
-    // run SEO
-    this.seo.getSEO();
+    // Update page-specific SEO
+    this.seo.updatePageSEO(
+      'Education & Certifications | Marco Oppel',
+      'Learn about Marco Oppel\'s educational background and professional certifications in web development.',
+      '/education'
+    );
 
     // education and certifications should be loaded and non-undefined
     // Otherwise error is thrown

@@ -64,8 +64,12 @@ export class ContactComponent implements OnInit {
       behavior: 'smooth'
     }); // scroll to top of page
 
-    // run SEO
-    this.seo.getSEO();
+    // Update page-specific SEO
+    this.seo.updatePageSEO(
+      'Contact | Marco Oppel',
+      'Get in touch with Marco Oppel for web development projects and collaborations.',
+      '/contact'
+    );
 
     // Get the controls
     const controls =  this.contact.controls;
