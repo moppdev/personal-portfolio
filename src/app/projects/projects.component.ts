@@ -3,19 +3,19 @@ import { Project } from '../model/project.model';
 import { InfoService } from '../services/info.service';
 import { ProjectComponent } from "./project/project.component";
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
-import { LoadingComponent } from '../loading/loading.component';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectComponent, ErrorSuccessCardComponent, LoadingComponent],
+  imports: [ProjectComponent, ErrorSuccessCardComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent implements OnInit {
   projects?: Signal<Project[]>;
   checker: boolean = false;
+  errorOccurred: boolean = false;
 
   // Inject the InfoService
   private infoService = inject(InfoService);
@@ -38,12 +38,16 @@ export class ProjectsComponent implements OnInit {
       '/projects'
     );
 
-    // Check if projects are not undefined, otherwise throw error
-    try {
-      this.projects = signal(this.infoService.projects);
-      this.checker = true;
-    } catch (error) {
-      throw new Error(`${error}`);
-    }
+    // Add a small delay to show loading state
+    setTimeout(() => {
+      // Check if projects are not undefined, otherwise throw error
+      try {
+        this.projects = signal(this.infoService.projects);
+        this.checker = true;
+      } catch (error) {
+        this.errorOccurred = true;
+        throw new Error(`${error}`);
+      }
+    }, 300); // Reduced delay since global loading handles the main loading
   }
 }

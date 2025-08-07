@@ -1,36 +1,30 @@
 <section id="services">
-    @defer
-    {
-        @if (checker)
-        {
-            <div class="content">
-                <!-- HTML component for services-offered -->
-                <h1>Services</h1>
-                <p>Here are the services I offer!</p>
-        
-                <!-- For every service, generate a Service component-->
-                <div class="service-container">
-                    @for (service of services(); track $index) 
-                    {
-                        <service [service_info]="service"></service>
-                    }
-                </div>
-        
-                <!-- Button that takes users to my Upwork profile-->
-                <button class="upwork" (click)="goToUpwork()">
-                        Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
-                </button>
+    <!-- Show content when checker is true -->
+    @if (checker) {
+        <div class="content">
+            <!-- HTML component for services-offered -->
+            <h1>Services</h1>
+            <p>Here are the services I offer!</p>
+    
+            <!-- For every service, generate a Service component-->
+            <div class="service-container">
+                @for (service of services(); track $index) 
+                {
+                    <service [service_info]="service"></service>
+                }
             </div>
-        }
-        @else 
-        {
-            <div class="content">
-                <app-error-success-card></app-error-success-card>
-            </div>
-        }
+    
+            <!-- Button that takes users to my Upwork profile-->
+            <button class="upwork" (click)="goToUpwork()">
+                    Contact Me on Upwork! <fa-icon [icon]="faUpwork"></fa-icon>
+            </button>
+        </div>
     }
-    @loading
-    {
-        <app-loading></app-loading>
+    
+    <!-- Show error card if needed -->
+    @if (errorOccurred) {
+        <div class="content">
+            <app-error-success-card></app-error-success-card>
+        </div>
     }
 </section>
