@@ -5,13 +5,12 @@ import { InfoService } from '../services/info.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSquareUpwork } from '@fortawesome/free-brands-svg-icons';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
-import { LoadingComponent } from '../loading/loading.component';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-services-offered',
   standalone: true,
-  imports: [ServiceComponent, FontAwesomeModule, ErrorSuccessCardComponent, LoadingComponent],
+  imports: [ServiceComponent, FontAwesomeModule, ErrorSuccessCardComponent],
   templateUrl: './services-offered.component.html',
   styleUrl: './services-offered.component.scss'
 })
@@ -19,6 +18,7 @@ export class ServicesOfferedComponent implements OnInit {
   services!: Signal<Services[]>;
   faUpwork = faSquareUpwork;
   checker: boolean = false;
+  errorOccurred: boolean = false;
 
   // inject the seo service to run SEO
   // This is a custom service that adds meta tags to the page
@@ -42,14 +42,18 @@ export class ServicesOfferedComponent implements OnInit {
       '/services'
     );
 
-    // When component is initialized, check if services is defined
-    // Otherwise, throw error
-    try {
-      this.services = signal(this.infoService.services);
-      this.checker = true;
-    } catch (error) {
-      throw new Error(`${error}`);
-    }
+    // Add a small delay to show loading state
+    setTimeout(() => {
+      // When component is initialized, check if services is defined
+      // Otherwise, throw error
+      try {
+        this.services = signal(this.infoService.services);
+        this.checker = true;
+      } catch (error) {
+        this.errorOccurred = true;
+        throw new Error(`${error}`);
+      }
+    }, 300); // Reduced delay since global loading handles the main loading
   }
 
   // Function that takes the user to Upwork

@@ -23,6 +23,7 @@ export class EducationComponent implements OnInit, AfterViewInit {
 
   checker: boolean = false;
   errorMessage: string = "";
+  errorOccurred: boolean = false;
   
   // variables to hold relevant info, checked by corresponding models
   education?: Education[];
@@ -51,54 +52,55 @@ export class EducationComponent implements OnInit, AfterViewInit {
       '/education'
     );
 
-    // education and certifications should be loaded and non-undefined
-    // Otherwise error is thrown
-      try {
-        this.education = this.infoService.education;
-        this.certifications = this.infoService.certifications;  
-        this.checker = true;        
-      } catch (error) {
-        // throw error
-        this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
-        throw new Error(`${error}`);
-      }
+    // Add a small delay to show loading state
+    setTimeout(() => {
+      // education and certifications should be loaded and non-undefined
+      // Otherwise error is thrown
+        try {
+          this.education = this.infoService.education;
+          this.certifications = this.infoService.certifications;  
+          this.checker = true;
+          
+          // Initialize Swiper after content is loaded
+          setTimeout(() => {
+            this.initializeSwiper();
+          }, 100); // Small delay to ensure DOM is updated
+        } catch (error) {
+          // throw error
+          this.errorOccurred = true;
+          this.errorMessage = "Something went wrong with retrieving information from the JSON file.";
+          throw new Error(`${error}`);
+        }
+    }, 300); // Reduced delay since global loading handles the main loading
   }
 
   ngAfterViewInit()
   {
-              /// Use Swiper.js to make Certifications and Education more intuitive ///
-          // const eduSwiperOptions: SwiperOptions = {
-          //   modules: [Navigation],
-          //   direction: 'horizontal',
-          //   navigation: {
-          //     prevEl: ".education-prev",
-          //     nextEl: ".education-next"
-          //   }
-          // };
-    
-          // const eduSwiper = new Swiper(".education-swiper", eduSwiperOptions);
+    // Swiper will be initialized after data loads in ngOnInit
+  }
 
-                // Instantiate SwiperOptions' options to use for the certSwiper instance
-                const certSwiperOptions: SwiperOptions = {
-                  modules: [Navigation, Pagination],
-                  direction: 'horizontal',
-                  spaceBetween: 20,
-                  navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
-                  },
-                  breakpoints: {
-                    480: {
-                      slidesPerView: 2,
-                    },
-                    1100: {
-                      slidesPerView: 3,
-                    }
-                  }
-                };
-          
-                // Create new Swiper instance
-                const certSwiper = new Swiper(".cert-swiper", certSwiperOptions);
+  private initializeSwiper() {
+    // Instantiate SwiperOptions' options to use for the certSwiper instance
+    const certSwiperOptions: SwiperOptions = {
+      modules: [Navigation, Pagination],
+      direction: 'horizontal',
+      spaceBetween: 20,
+      navigation: {
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next"
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+        },
+        1100: {
+          slidesPerView: 3,
+        }
+      }
+    };
+
+    // Create new Swiper instance
+    new Swiper(".cert-swiper", certSwiperOptions);
   }
     
 

@@ -1,5 +1,5 @@
 {
-    "about": "Nice to meet you! I'm an aspiring web and mobile developer with a passion for building practical, user-friendly solutions. I believe that technology should be simple, effective, and enhance everyday life. Whether it’s a website, an app, or a custom solution, my goal is to create intuitive experiences that make a difference. When I’m not coding, you’ll likely find me gaming on my PC, diving into books about history and politics, or enjoying Premier League Darts on a Thursday night!",
+    "about":"I'm a junior full-stack web and mobile developer passionate about building clean, practical, and user-friendly solutions that make a real difference in everyday life. \n\nFrom sleek front-end interfaces built with React, Angular, and TailwindCSS to robust back-end systems powered by Django, ASP.NET, and SQL Server, I enjoy transforming real-world problems into simple, effective digital tools.\n\n I bring hands-on experience working with RESTful APIs, Agile workflows, and DevOps tools such as Git and Vercel, always aiming for accessible, maintainable code that scales. When I’m not coding, I’m likely diving into a good book on history or politics, gaming on my PC, or watching darts and rugby matches. I'm curious about how the world works and excited to keep building for it.",
     "education": [
         {
             "institution": "University of South Africa",
@@ -11,6 +11,27 @@
         }
     ],
     "certifications": [
+        {
+            "institution": "Udemy",
+            "title": "Cypress End-to-End Testing - Getting Started",
+            "institution_img": "udemy_logo.jpg",
+            "link": "https://www.udemy.com/certificate/UC-bc2420a2-8f3c-4592-830a-030a756333fd/",
+            "skills_learned": ["Cypress", "End-to-End Testing", "JavaScript"]
+        },
+        {
+            "institution": "freeCodeCamp",
+            "title": "Data Visualization with D3",
+            "institution_img": "fcc_logo.jpg",
+            "link": "https://freecodecamp.org/certification/moppel_02/data-visualization",
+            "skills_learned": ["D3", "Data Visualization"]
+        },
+        {
+            "institution": "Udemy",
+            "title": "C# .NET with MS SQL Complete Beginner to Master 2025",
+            "institution_img": "udemy_logo.jpg",
+            "link": "https://www.udemy.com/certificate/UC-e1d0fc0c-847f-4884-b7cb-cbd5302ab09b/",
+            "skills_learned": ["Entity Framework Core", "SQL Server", "Swagger", "ASP.NET Core", "C#"]
+        },
         {
             "institution": "Udemy",
             "title": "Figma UI UX Essentials",
@@ -37,7 +58,7 @@
             "title": "Foundational C# with Microsoft",
             "institution_img": "fcc_logo.jpg",
             "link": "https://freecodecamp.org/certification/moppel_02/foundational-c-sharp-with-microsoft",
-            "skills_learned": ["Basic C#"]
+            "skills_learned": ["C#"]
         },
         {
             "institution": "freeCodeCamp",
@@ -62,12 +83,12 @@
     ],
     "projects": [
         {
-            "title": "KnowYourConstitution1996",
+            "title": "KYC1996",
             "description": "An open-source website that allows users to access South Africa's 1996 Constitution easily and in a user-friendly manner. The website also provides API documentation for the ZAConstitution1996 API that the website uses.",
             "content": ["projects/kyc1996.jpg"],
             "stack": ["React", "TypeScript", "Tailwind CSS", "Axios", "React Router", "Shiki", "Vite"],
             "link": "https://github.com/moppdev/KnowYourConstitution1996",
-            "demo_link": "https://kyc1996.vercel.app"
+            "demo_link": "https://kyc1996.co.za"
         },
         {
             "title": "ZAConstitution1996 API",
@@ -83,7 +104,7 @@
             "content": ["projects/portfolio.jpg"],
             "stack": ["Angular", "TypeScript", "SASS", "Swiper.js", "EmailJS"],
             "link": "https://github.com/moppdev/personal-portfolio",
-            "demo_link": "https://maropp-portfolio.vercel.app"
+            "demo_link": "https://mopp.co.za"
         },
         {
             "title": "How To Vote 2024",
@@ -109,7 +130,7 @@
         },
         {
             "service": "Back-End Development",
-            "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API. I also provide other back-end solutions using PHP when needed."
+            "brief_desc": "For the back-end, I build effective and performant APIs with ASP.NET Web API and C#. I also provide other back-end solutions using Python/Django when needed."
         },
         {
             "service": "Database Design & Management",
@@ -119,5 +140,5 @@
             "service": "UX/UI Design",
             "brief_desc": "A great UI should catch the user's eye while staying intuitive. I focus on UX design using Figma to ensure apps and websites are easy to navigate, visually appealing, and actually enjoyable to use."
         }
-    ]    
+    ]
 }

@@ -4,6 +4,7 @@ div {
     text-align: center;
     padding: 0.6em;
     height: 5em;
+    overflow-y: hidden;
 
     .logo {
         font-size: 2.5em;
@@ -15,4 +16,8 @@ div {
 .ng-fa-icon {
     color: $base-text-color;
     @include nav-link;
+}
+
+p {
+    padding-top: 1em;
 }

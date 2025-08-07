@@ -1,31 +1,24 @@
 <section id="projects">
     <div class="content">
-        @defer
-        {
+        <!-- Show content when checker is true -->
+        @if (checker) {
             <!-- HTML component for projects-->
-            @if (checker)
-            {
-                <div id="project-div">
-                    <h1>Projects</h1>
-                </div>
+            <div id="project-div">
+                <h1>Projects</h1>
+            </div>
 
-                <!-- For every project, load a Project component -->
-                <div id="project-container">
-                    @for (project of projects?.(); track $index)
-                    {
-                        <project [project]="project" />
-                    }
-                </div>
-            }
-            @else 
-            {
-                <!-- Show error card -->
-                <app-error-success-card></app-error-success-card>
-            }
+            <!-- For every project, load a Project component -->
+            <div id="project-container">
+                @for (project of projects?.(); track $index)
+                {
+                    <project [project]="project" />
+                }
+            </div>
         }
-        @loading 
-        {
-            <app-loading></app-loading>
+        
+        <!-- Show error card if needed -->
+        @if (errorOccurred) {
+            <app-error-success-card></app-error-success-card>
         }
     </div>
 </section>

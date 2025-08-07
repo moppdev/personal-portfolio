@@ -1,40 +1,41 @@
 <section id="education">
-    @if (checker)
-    {
-      <!-- HTML component for education-->
+    <!-- Show content when checker is true -->
+    @if (checker) {
+        <!-- HTML component for education-->
         <div class="content">
-          
-          <!-- Education section -->
-          <div class="education">
-            <h1>Education</h1>
+            <!-- Education section -->
+            <div class="education">
+              <h1>Education</h1>
 
-            <!-- For every qualification, create a Card instance-->
-            <div>
-                @for (qualification of education; track $index) {
-                  <app-card [info]="qualification"></app-card>
-                }
+              <!-- For every qualification, create a Card instance-->
+              <div>
+                  @for (qualification of education; track $index) {
+                    <app-card [info]="qualification"></app-card>
+                  }
+              </div>
             </div>
-          </div>
-    
-          <!-- Certification section, using Swiper.js-->
-            <div class="cert-swiper">
-                <h1>Certifications</h1>
-                <p>Click on any certification to view it.</p>
+      
+            <!-- Certification section, using Swiper.js-->
+              <div class="cert-swiper">
+                  <h1>Certifications</h1>
+                  <p>Swipe on/drag the carousel, and click on any certification to view it.</p>
 
-                <!-- For every certification, create a swiper-slide/Card instance-->
-                <div class="swiper-wrapper">
-                    @for (cert of certifications; track $index) {
-                        <app-card class="swiper-slide" [info]="cert"></app-card>
-                    }
-                </div>
+                  <!-- For every certification, create a swiper-slide/Card instance-->
+                  <div class="swiper-wrapper">
+                      @for (cert of certifications; track $index) {
+                          <app-card class="swiper-slide" [info]="cert"></app-card>
+                      }
+                  </div>
 
-                <!-- Navigation buttons for Swiper.js -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+                  <!-- Navigation buttons for Swiper.js -->
+                  <!-- <div class="swiper-button-prev"></div> -->
+                  <!-- <div class="swiper-button-next"></div> -->
+              </div>
         </div>
     }
-    @else {
+    
+    <!-- Show error card if needed -->
+    @if (errorOccurred) {
         <app-error-success-card></app-error-success-card>
     }
 </section>
