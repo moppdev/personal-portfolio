@@ -47,13 +47,21 @@
                     }
                 </div>
         
-                @if (contact.valid)
-                {
-                    <button  type="submit" class="button">Submit</button>
+                @if (submitting) {
+                    <div class="inline-loading" aria-live="polite" aria-label="Submitting form, please wait">
+                        <div class="spinner" role="status"></div>
+                        <span>Sending message...</span>
+                    </div>
                 }
-                @else
-                {
-                    <button disabled class="button-disabled">Submit</button>
+                @else {
+                    @if (contact.valid)
+                    {
+                        <button  type="submit" class="button">Submit</button>
+                    }
+                    @else
+                    {
+                        <button disabled class="button-disabled">Submit</button>
+                    }
                 }
 
                 <div class="form-result" [style.display]="complete ? 'block' : 'none'">
@@ -68,9 +76,6 @@
                     }
                 </div>
             </form>
-        }
-        @loading {
-            <app-loading></app-loading>
-        }
+    }
     </div>
 </section>

@@ -38,4 +38,22 @@ export class InfoService {
     return infoJson.services;
   }
 
+  // getter to get the soft skills array
+  get softSkills()
+  {
+    return infoJson.skills[0].soft_skills;
+  }
+
+  // getter to get the languages skills array
+  get languageSkills()
+  {
+    return infoJson.skills[1].languages;
+  }
+
+  // getter to get the frameworks skills array
+  get frameworkSkills()
+  {
+    return infoJson.skills[2].frameworks;
+  }
+
 }

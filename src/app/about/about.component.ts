@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { InfoService } from '../services/info.service';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 import { SeoService } from '../services/seo.service';
+import { SkillCardComponent } from '../skill-card/skill-card.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ErrorSuccessCardComponent],
+  imports: [ErrorSuccessCardComponent, SkillCardComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -26,6 +27,11 @@ export class AboutComponent implements OnInit {
 
   // get the paragraph that will display on the component
   about?: string;
+
+  // get the skills info
+  softSkills?: string[];
+  languageSkills?: { name: string; img_path: string; }[];
+  frameworkSkills?: { name: string; img_path: string; }[];
 
   // picture of me
   pic: string = "";
@@ -57,6 +63,9 @@ export class AboutComponent implements OnInit {
     // Check if about is defined
     try {
         this.about = this.infoService.about;
+        this.softSkills = this.infoService.softSkills;
+        this.languageSkills = this.infoService.languageSkills;
+        this.frameworkSkills = this.infoService.frameworkSkills;
         this.checker = true;
     } catch (error) {
       this.checker = false;

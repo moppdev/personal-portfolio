@@ -139,3 +139,33 @@ textarea {
 .result-negative {
     background-color: #F44336;
 }
+
+/* Inline form submission loading indicator */
+.inline-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    margin-top: 1.2em;
+    font-size: 0.95em;
+    padding: 0.6em 0;
+    animation: fade-in 0.25s ease-in;
+}
+
+.inline-loading .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #cfd8dc;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

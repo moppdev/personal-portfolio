@@ -6,13 +6,12 @@ import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { ErrorSuccessCardComponent } from "../error-success-card/error-success-card.component";
 import { Subscription } from 'rxjs';
-import { LoadingComponent } from '../loading/loading.component';
 import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, FontAwesomeModule, CommonModule, ErrorSuccessCardComponent, LoadingComponent],
+  imports: [ReactiveFormsModule, FontAwesomeModule, CommonModule, ErrorSuccessCardComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -37,6 +36,7 @@ export class ContactComponent implements OnInit {
   validNameElem: boolean = false;
   validMessageElem: boolean = false;
   complete: boolean = false;
+  submitting: boolean = false; // inline loading state while sending email
   destroyRef: DestroyRef = inject(DestroyRef);
   
   // Create reactive form group that connects to elements on the page
@@ -110,6 +110,7 @@ export class ContactComponent implements OnInit {
     // Check if the form is valid
     if (this.contact.valid)
     {
+    this.submitting = true; // start inline loader
       const controls = this.contact.controls;
       // If it is, send the values of elements in form
       // in JSON format to the sendMail function in EmailService
@@ -134,6 +135,8 @@ export class ContactComponent implements OnInit {
           this.sent = false;
           this.sentMessage = "An unexpected error occurred. Please try again.";
           throw new Error(`${error}`);
+    } finally {
+      this.submitting = false; // stop inline loader regardless of outcome
       }
     };
 

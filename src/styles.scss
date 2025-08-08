@@ -48,11 +48,11 @@ section, #nav-modal  {
     color: $base-text-color;
     overflow-y: hidden;
     padding-top: 2em;
-    padding-bottom: 10em;
+    padding-bottom: 14em;
 
     @media (min-width: 467px) and (max-width: 765px)
     {
-        padding-bottom: 13em;
+        padding-bottom: 15em;
     }
 
     @media (width: 766px)
@@ -107,4 +107,18 @@ h1 {
 h2, h3, h4, h5, h6 {
     font-family: "Hind", sans-serif;
     font-weight: lighter;
+}
+
+h2 {
+    @media (min-width: 766px)
+    {
+        font-size: 2em;
+    }
+}
+
+h3 {
+    @media (min-width: 766px)
+    {
+        font-size: 1em;
+    }
 }
