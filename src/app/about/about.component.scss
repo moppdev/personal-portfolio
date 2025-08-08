@@ -20,7 +20,7 @@
 // slide-in animation
 @keyframes slide-in {
     0% {
-        transform: translateX(33em);
+        transform: translateX(-33em);
     }
     100% {
         transform: translateX(0em);
@@ -204,4 +204,87 @@
 
 p {
     white-space: pre-line; // allows for line breaks in the text
+}
+
+// styling for the skills section
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4em;
+
+    @media (min-width: 481px) {
+        flex-direction: row;
+        justify-content: center;
+        gap: 4em;
+    }
+}
+
+#skills-div {
+    text-align: center;
+    grid-column: span 2;
+     // animation
+    animation: slide-in 2s forwards;
+
+    @media (max-width: 480px) {
+        margin: 0.4em 2em 0;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        margin: 1em 1.8em 0;
+    }
+
+    @media (width: 766px) {
+        margin-left: 3em;
+        padding-top: 5em;
+    }
+
+    @media (min-width: 767px) {
+        margin: 0em 3em 0em 3em;
+        padding-top: 3em;
+    }
+
+    @media (min-width: 1300px)
+    {
+        padding-top: 3em;
+    }
+
+    @media (min-width: 1500px)
+    {
+        padding-top: 4em;
+    }
+
+    @media (min-width: 1600px)
+    {
+        padding-top: 5em;
+    }
+}
+
+.skills-card {
+    h3 {
+         text-align: center;
+    }
+
+  color: $nav-foot-color;
+  background-color: $base-text-color;
+  padding: 2em;
+  border-radius: 0.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+
+  ul > li {
+    padding: 3em 0em;
+  }
+
+    .skills-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.75rem;
+        justify-items: center;
+    }
+}
+
+h2 {
+    font-size: 2em;
 }

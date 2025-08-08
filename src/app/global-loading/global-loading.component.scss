@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(250, 243, 243, 0.95);
+    background-color: rgba(223, 209, 209, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 .global-loading-overlay.active {
-    opacity: 1;
+    opacity: 0.8;
     visibility: visible;
 }
 

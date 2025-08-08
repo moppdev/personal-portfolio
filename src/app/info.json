@@ -140,5 +140,84 @@
             "service": "UX/UI Design",
             "brief_desc": "A great UI should catch the user's eye while staying intuitive. I focus on UX design using Figma to ensure apps and websites are easy to navigate, visually appealing, and actually enjoyable to use."
         }
+    ],
+    "skills": [
+        {
+            "soft_skills": [
+                "Communication",
+                "Teamwork",
+                "Problem Solving",
+                "Time Management",
+                "Analytical Thinking"
+            ]
+        },
+        {
+            "languages": [
+                {
+                    "name": "HTML",
+                    "img_path": "logos/html.png"
+                },
+                {
+                    "name": "CSS",
+                    "img_path": "logos/css.png"
+                },
+                {
+                    "name": "JavaScript",
+                    "img_path": "logos/js.png"
+                },
+                {
+                    "name": "TypeScript",
+                    "img_path": "logos/ts.png"
+                },
+                {
+                    "name": "Python",
+                    "img_path": "logos/python.png"
+                },
+                {
+                    "name": "C#",
+                    "img_path": "logos/csharp.png"
+                }
+            ]
+        },
+        {
+            "frameworks": [
+                {
+                    "name": "Angular",
+                    "img_path": "logos/angular.png"
+                },
+                {
+                    "name": "React",
+                    "img_path": "logos/react.png"
+                },
+                {
+                    "name": "Cypress",
+                    "img_path": "logos/cypress.png"
+                },
+                {
+                    "name": "Django",
+                    "img_path": "logos/django.png"
+                },
+                {
+                    "name": "D3",
+                    "img_path": "logos/d3.png"
+                },
+                {
+                    "name": "ASP.NET Core",
+                    "img_path": "logos/net.png"
+                },
+                {
+                    "name": "MySQL",
+                    "img_path": "logos/mysql.png"
+                },
+                {
+                    "name": "SQL Server",
+                    "img_path": "logos/sqlserver.png"
+                },
+                {
+                    "name": "TailwindCSS",
+                    "img_path": "logos/tailwindcss.png"
+                }
+            ]
+        }
     ]
 }

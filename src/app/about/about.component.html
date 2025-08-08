@@ -20,6 +20,45 @@
                 <button class="button">Get my CV!</button>
             </a>
         </div>
+
+        <!-- Skills section -->
+        <div id="skills-div">
+            <h2>Skills</h2>
+
+            <div class="skills-container">
+                <div class="skills-card">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        @for (lang of languageSkills; track lang.name) {
+                            <app-skill-card [skill]="lang" />
+                        }
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>Frameworks/Libraries</h3>
+                    <div class="skills-list">
+                        @for (fw of frameworkSkills; track fw.name) {
+                            <app-skill-card [skill]="fw" />
+                        }
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>Soft Skills</h3>
+
+                    <ul>
+                        @for (skill of softSkills; track $index) 
+                        {
+                            <li>
+                                {{ skill }}
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     }
     @else
     {
