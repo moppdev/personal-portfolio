@@ -14,7 +14,7 @@
         {
             "institution": "freeCodeCamp",
             "title": "Back End Development and APIs",
-            "institution_img": "freecodecamp_logo.jpg",
+            "institution_img": "fcc_logo.jpg",
             "link": "https://freecodecamp.org/certification/moppel_02/back-end-development-and-apis",
             "skills_learned": ["APIs", "MongoDB", "Mongoose", "Express", "Node.js", "JavaScript"]
         },
