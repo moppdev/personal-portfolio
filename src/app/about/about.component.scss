@@ -207,16 +207,20 @@ p {
 }
 
 // styling for the skills section
+
 .skills-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 4em;
+    gap: 3em;
 
-    @media (min-width: 481px) {
+    @media (min-width: 768px) {
         flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
         justify-content: center;
-        gap: 4em;
+        gap: 2.5em;
     }
 }
 
@@ -260,28 +264,92 @@ p {
     }
 }
 
+
+
 .skills-card {
     h3 {
-         text-align: center;
+        text-align: center;
     }
 
-  color: $nav-foot-color;
-  background-color: $base-text-color;
-  padding: 2em;
-  border-radius: 0.6em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9em;
+    color: $nav-foot-color;
+    background-color: $base-text-color;
+    padding: 2em 1em;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+    max-width: 500px;
+    min-width: 220px;
+    margin: 0 auto;
+    word-break: break-word;
 
-  ul > li {
-    padding: 3em 0em;
-  }
+    ul, .skills-list, li {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    ul > li {
+        padding: 1.2em 0em;
+        border-bottom: 1px black solid;
+        font-size: 1em;
+    }
 
     .skills-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-template-columns: 1fr;
         gap: 0.75rem;
-        justify-items: center;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        padding: 2em 2em;
+        max-width: 600px;
+        min-width: 250px;
+        .skills-list {
+            grid-template-columns: 1fr;
+            gap: 1em;
+        }
+        ul > li {
+            font-size: 1.1em;
+            padding: 1.5em 0em;
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: 2em 1.2em;
+        max-width: 350px;
+        min-width: 220px;
+        flex: 1 1 320px;
+        aspect-ratio: 2/3.5;
+        .skills-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2em;
+        }
+        ul > li {
+            font-size: 1.15em;
+            padding: 1.5em 0em;
+        }
+    }
+
+    // Special handling for soft skills card
+    &.soft-skills {
+        min-width: 220px;
+        max-width: 320px;
+        padding: 2em 0.7em;
+        font-size: 0.98em;
+        ul > li {
+            font-size: 1em;
+            padding: 1.1em 0em;
+        }
+        @media (min-width: 481px) and (max-width: 767px) {
+            min-width: 250px;
+            max-width: 350px;
+            font-size: 1em;
+        }
+        @media (min-width: 768px) {
+            min-width: 270px;
+            max-width: 370px;
+            font-size: 1.05em;
+        }
     }
 }
 

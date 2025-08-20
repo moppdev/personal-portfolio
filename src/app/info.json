@@ -12,6 +12,20 @@
     ],
     "certifications": [
         {
+            "institution": "freeCodeCamp",
+            "title": "Back End Development and APIs",
+            "institution_img": "freecodecamp_logo.jpg",
+            "link": "https://freecodecamp.org/certification/moppel_02/back-end-development-and-apis",
+            "skills_learned": ["APIs", "MongoDB", "Mongoose", "Express", "Node.js", "JavaScript"]
+        },
+        {
+            "institution": "Udemy",
+            "title": "The Modern React Bootcamp (Hooks, Context, NextJS, Router)",
+            "institution_img": "udemy_logo.jpg",
+            "link": "https://www.udemy.com/certificate/UC-894421ed-96d4-47c3-bf2b-7d9808fb25aa/",
+            "skills_learned": ["React", "Next.js", "React Router"]
+        },
+        {
             "institution": "Udemy",
             "title": "Cypress End-to-End Testing - Getting Started",
             "institution_img": "udemy_logo.jpg",
@@ -145,7 +159,7 @@
         {
             "soft_skills": [
                 "Communication",
-                "Teamwork",
+                "Self-Motivation",
                 "Problem Solving",
                 "Time Management",
                 "Analytical Thinking"
@@ -214,8 +228,20 @@
                     "img_path": "logos/sqlserver.png"
                 },
                 {
-                    "name": "TailwindCSS",
+                    "name": "Tailwind",
                     "img_path": "logos/tailwindcss.png"
+                },
+                {
+                    "name": "Express",
+                    "img_path": "logos/express.png"
+                },
+                {
+                    "name": "MongoDB",
+                    "img_path": "logos/mongodb.png"
+                },
+                {
+                    "name": "Mongoose",
+                    "img_path": "logos/mongoose.png"
                 }
             ]
         }
